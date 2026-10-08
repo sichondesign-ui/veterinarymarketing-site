@@ -1,7 +1,7 @@
 # VeterinaryMarketing.com – Site Preview
 
 Static preview build of the new veterinarymarketing.com. Plain HTML pages with shared, content-hashed assets in `assets/`
-(unpacked from the Claude Design single-file export, 224 MB → 23 MB), so the folder can be served by GitHub Pages, Netlify or any static host with no build step.
+(unpacked from the Claude Design single-file export), so the folder can be served by GitHub Pages, Netlify or any static host with no build step.
 
 ## Hosting on GitHub Pages
 1. Push this folder's contents to the repository root (or a `docs/` folder).
@@ -58,16 +58,22 @@ File names are flat so the folder works from any host path; focus pages use the 
 - Forms are front-end only. Production needs a submit target (HubSpot Forms API) and a spam measure (reCAPTCHA or Turnstile).
 
 ## Open items for John
+- Brand video: the trust band plays `assets/collage-video.mp4` (muted, looping, team photo as poster). Keep the web-compressed
+  version (~7-8 MB, 1280p) at that path; the 54 MB original is too heavy to ship.
 - Artwork for three service cards: Veterinary AEO, ChatGPT Ads, Social Media Posting (placeholders in place).
 - A larger headshot of John for the Conferences page (current file is 200×200).
 - Confirm founding year: the About page history photo carries a "2019 · veterinary only, ever since" badge that isn't in the copy doc.
 - Reviews page shows 73 written Google reviews (7 were truncated in the export and link out to Google) plus 11 videos.
 
 ## Changelog
-### 2026-10-08 – build 5a (repo package)
-- Homepage trust band: self-hosted brand collage video (`assets/brand-collage.mp4`, 1280p muted loop, 7.6 MB) replaces the placeholder photo. Source: Collage Video.mp4 from the client archive.
+### 2026-10-08 – build 6a (repo package)
 - Unpacked single-file bundles into shared assets; pages are 25–140 KB instead of 9–17 MB each.
 - 8 service pages: "See all practice types" link repointed from the removed `areas-of-focus.html` to `index.html#focus`.
+### 2026-10-08 – build 6
+- Header on every page starts full-width and glides into the sticky pill on scroll, matching the homepage.
+- Homepage trust band plays the brand collage video (assets/collage-video.mp4, 7.6 MB, muted loop, team photo poster). First external asset in the build; keep the assets/ folder next to the HTML.
+- Mobile menu: sub-panel no longer bleeds into the visible edge while closed.
+
 ### 2026-10-08 – build 5
 - Homepage: 24 images that were built dynamically (focus cards, team gallery, core-value illustrations) are now embedded. Dead brand video replaced with a slow-pan team photo.
 - "See all eight practice types" links go to the homepage Areas of Focus section; the internal areas-of-focus review page is no longer in the build.
