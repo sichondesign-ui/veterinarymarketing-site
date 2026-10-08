@@ -58,7 +58,6 @@ File names are flat so the folder works from any host path; focus pages use the 
 - Forms are front-end only. Production needs a submit target (HubSpot Forms API) and a spam measure (reCAPTCHA or Turnstile).
 
 ## Open items for John
-- Brand video: the YouTube ID on the old homepage (883P9UEMWOc) is now unavailable. The "trust" band shows a team photo until John supplies a working YouTube or Vimeo link.
 - Artwork for three service cards: Veterinary AEO, ChatGPT Ads, Social Media Posting (placeholders in place).
 - A larger headshot of John for the Conferences page (current file is 200×200).
 - Confirm founding year: the About page history photo carries a "2019 · veterinary only, ever since" badge that isn't in the copy doc.
@@ -66,6 +65,7 @@ File names are flat so the folder works from any host path; focus pages use the 
 
 ## Changelog
 ### 2026-10-08 – build 5a (repo package)
+- Homepage trust band: self-hosted brand collage video (`assets/brand-collage.mp4`, 1280p muted loop, 7.6 MB) replaces the placeholder photo. Source: Collage Video.mp4 from the client archive.
 - Unpacked single-file bundles into shared assets; pages are 25–140 KB instead of 9–17 MB each.
 - 8 service pages: "See all practice types" link repointed from the removed `areas-of-focus.html` to `index.html#focus`.
 ### 2026-10-08 – build 5
