@@ -81,6 +81,8 @@ Still needed before launch, each requires something from John or the build platf
 - Rendering: pages are client-rendered by the Claude Design runtime; the raw HTML a crawler receives is a template. Fine for a preview; the production site should be the Webflow build (or a static render).
 
 ## Changelog
+### 2026-10-13 – build 7c
+- Homepage hero: new two-dog image (John, 10/13) replaces the dog-and-cat.
 ### 2026-10-13 – build 7b (launch prep)
 - Favicon/app icons, OG/Twitter meta + default share image, canonical, lang, theme-color, robots.txt, sitemap.xml, 404 page. Preview noindex guard.
 ### 2026-10-13 – build 7 (client review 10/08 + answers 10/13)
