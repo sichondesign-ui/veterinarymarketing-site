@@ -47,7 +47,7 @@ File names are flat so the folder works from any host path; focus pages use the 
 - **Free Competitive Analysis** CTAs go to the analysis tool: `https://wizard.veterinarymarketing.com/your-veterinary-practice`.
   The analysis page's form hands off to the same URL.
 - **Conferences speaking request** is a demo form; John will supply a HubSpot form.
-- Blog and Privacy Policy link to the live site. Case Studies is retired (redirect `/case-studies` → `/reviews`).
+- Blog and Privacy Policy are now pages in this build (`blog.html` demo content, `privacy-policy.html` live text). Case Studies is retired (redirect `/case-studies` → `/reviews`).
 - Redirect `/services/veterinary-copy-writing` → `/services/veterinary-websites`.
 
 ## Build notes
@@ -61,7 +61,6 @@ File names are flat so the folder works from any host path; focus pages use the 
 - Screen videos for the MacBook / iMac / iPhone frames on the service pages (Websites ×2, Google Ads, AEO, Social Media Ads, Social Media Posting). Labeled device placeholders are in place.
 - Social Media Ads page has no graphics yet; device placeholders only.
 - Request Info modal: the image you referenced in the review was not in the content folder. Send it and it goes in the modal's intro panel.
-- Confirm the Terms link target for the SMS opt-in (currently points to the Privacy Policy).
 - Blog page shows 16 demo posts for layout review only. The live blog loads from the CMS.
 - Artwork for the Veterinary AEO, ChatGPT Ads and Social Media Posting service cards now uses the 10/13 graphics.
 - A larger headshot of John is now on the Conferences page (1000px).
@@ -83,6 +82,8 @@ This build was edited directly in this repo. The Claude Design export is retired
 - Conferences: 4-photo "On the road" collage, "Mon" placeholder stat replaced with "100s of practices supported", 1000px headshot.
 - Reviews: Google logo lock-up in the hero card and section header.
 - Specialty Practice: hero headline rebalanced (no more one word per line).
+- Privacy & Terms page ported from the live site (`privacy-policy.html`, May 15 2025 text, minus the stray culture paragraph at the top of the live page). All Privacy Policy / Terms links, including the SMS consent, now stay on-site.
+- About: the Las Olas strip reused the history photo; swapped to the team high-five photo.
 - New Blog hub page (`blog.html`) with 16 demo posts, featured post, category tags, infinite scroll with a Load more fallback. Linked from the About menu and footer.
 ### 2026-10-08 – build 6a (repo package)
 - Unpacked single-file bundles into shared assets; pages are 25–140 KB instead of 9–17 MB each.

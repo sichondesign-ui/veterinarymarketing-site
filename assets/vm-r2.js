@@ -114,6 +114,12 @@
     new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true });
     window.VM_R2 = { refresh: refresh };
   }
+  // Escape closes the Request Info / video dialogs on pages whose own script doesn't handle it
+  window.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var btn = document.querySelector('[role="dialog"] button[aria-label="Close"], [role="dialog"] button[aria-label="Close video"]');
+    if (btn) btn.click();
+  });
   var tries = 0;
   (function wait() {
     if (document.body && document.querySelector('h2, [data-count]')) { boot(); return; }
