@@ -1,0 +1,6 @@
+# PREVIEW: blocked until launch. At launch replace with:
+#   User-agent: *
+#   Allow: /
+#   Sitemap: https://www.veterinarymarketing.com/sitemap.xml
+User-agent: *
+Disallow: /

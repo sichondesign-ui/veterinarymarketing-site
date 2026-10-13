@@ -67,7 +67,22 @@ File names are flat so the folder works from any host path; focus pages use the 
 - Confirm founding year: the About page history photo carries a "2019 · veterinary only, ever since" badge that isn't in the copy doc.
 - Reviews page shows every written Google review (7 truncated in the export link out to Google) plus 11 videos. Review counts are no longer shown anywhere, so nothing to hand-update.
 
+## Launch checklist (not live yet; queued)
+Done in this build: favicon set (`favicon.ico`, `favicon.svg`, apple-touch, manifest icons), Open Graph + Twitter cards with a default share image (`assets/og-default.jpg`), canonical URLs pointing at the final veterinarymarketing.com paths, `lang="en"`, theme-color, `robots.txt`, `sitemap.xml`, branded `404.html`.
+
+**Preview guard — remove at launch:** every page carries `<meta name="robots" content="noindex, nofollow">` and `robots.txt` is `Disallow: /` so the GitHub preview is never indexed. Both are marked `PREVIEW ONLY` in the files.
+
+Still needed before launch, each requires something from John or the build platform:
+- Forms: Request Info modal, Contact form and Conference booking only flip a "thanks" state. They need HubSpot embeds / endpoints; the SMS opt-in must map to the field his texting vendor reads.
+- Fonts: Typekit files are self-hosted here (52 files), which Adobe's license does not permit in production. Use the Adobe Fonts kit for the domain.
+- Analytics / tracking: GA4 or GTM, HubSpot tracking code, Meta pixel. None present.
+- Redirects: old nested URLs (`/services/...`, `/areas-of-focus/...`, `/case-studies`, `/services/veterinary-copy-writing`) to the final structure.
+- Content: 6 device-frame video placeholders, Social Media Ads graphics, Request Info modal image, 16 demo blog posts, "2019" badge on About, legal-entity naming on the Privacy page (APV Marketing LLC / support@apvetmarketing.com).
+- Rendering: pages are client-rendered by the Claude Design runtime; the raw HTML a crawler receives is a template. Fine for a preview; the production site should be the Webflow build (or a static render).
+
 ## Changelog
+### 2026-10-13 – build 7b (launch prep)
+- Favicon/app icons, OG/Twitter meta + default share image, canonical, lang, theme-color, robots.txt, sitemap.xml, 404 page. Preview noindex guard.
 ### 2026-10-13 – build 7 (client review 10/08 + answers 10/13)
 This build was edited directly in this repo. The Claude Design export is retired; `tools/` holds the scripts that applied these changes.
 - Sitewide: every "free analysis / practice review / wizard" CTA now opens the Request Info modal. The wizard link survives only on the Free Competitive Analysis page (opens in a new tab) and as the homepage hero's secondary button (new tab).
