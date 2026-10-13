@@ -58,14 +58,32 @@ File names are flat so the folder works from any host path; focus pages use the 
 - Forms are front-end only. Production needs a submit target (HubSpot Forms API) and a spam measure (reCAPTCHA or Turnstile).
 
 ## Open items for John
-- Brand video: the trust band plays `assets/collage-video.mp4` (muted, looping, team photo as poster). Keep the web-compressed
-  version (~7-8 MB, 1280p) at that path; the 54 MB original is too heavy to ship.
-- Artwork for three service cards: Veterinary AEO, ChatGPT Ads, Social Media Posting (placeholders in place).
-- A larger headshot of John for the Conferences page (current file is 200×200).
+- Screen videos for the MacBook / iMac / iPhone frames on the service pages (Websites ×2, Google Ads, AEO, Social Media Ads, Social Media Posting). Labeled device placeholders are in place.
+- Social Media Ads page has no graphics yet; device placeholders only.
+- Request Info modal: the image you referenced in the review was not in the content folder. Send it and it goes in the modal's intro panel.
+- Confirm the Terms link target for the SMS opt-in (currently points to the Privacy Policy).
+- Blog page shows 16 demo posts for layout review only. The live blog loads from the CMS.
+- Artwork for the Veterinary AEO, ChatGPT Ads and Social Media Posting service cards now uses the 10/13 graphics.
+- A larger headshot of John is now on the Conferences page (1000px).
 - Confirm founding year: the About page history photo carries a "2019 · veterinary only, ever since" badge that isn't in the copy doc.
-- Reviews page shows 73 written Google reviews (7 were truncated in the export and link out to Google) plus 11 videos.
+- Reviews page shows every written Google review (7 truncated in the export link out to Google) plus 11 videos. Review counts are no longer shown anywhere, so nothing to hand-update.
 
 ## Changelog
+### 2026-10-13 – build 7 (client review 10/08 + answers 10/13)
+This build was edited directly in this repo. The Claude Design export is retired; `tools/` holds the scripts that applied these changes.
+- Sitewide: every "free analysis / practice review / wizard" CTA now opens the Request Info modal. The wizard link survives only on the Free Competitive Analysis page (opens in a new tab) and as the homepage hero's secondary button (new tab).
+- Sitewide: Free Competitive Analysis bands removed from the homepage, Contact page and all 8 service pages. The page itself remains and is linked from the footer; it is no longer in the header or mobile menu.
+- Sitewide: Google rating shows the G logo, 5.0 and five stars with no review count, including the floating badge and the Reviews page.
+- Sitewide: every section headline darkens word by word as it scrolls into view (`assets/vm-r2.js`), honoring reduced-motion.
+- Sitewide: animated counters (`assets/vm-r2.js`): 200+ counts up on every Areas-of-Focus page; "< 2 hrs" counts down from 48, "< 6 hrs" from 72; Google Ads page counts $20M+ up and 0% fee down from 20%; "1 dedicated account manager" is now a checkmark.
+- Areas-of-Focus pages: services section lists all 8 services as compact cards.
+- Service pages: practice-types section lists all 8 practice types; the "See all eight" link is gone. Content sections now alternate text/media (zig-zag) with real assets from the 10/13 folder and the old site, or a labeled device-frame placeholder where John is supplying a screen video.
+- About: history photo swapped (the coffee-walk crop cut heads off at the source), office gallery tiles equalized, orphan perk card centered.
+- Contact: simple form (first name, last name, email, phone, practice name) with the SMS opt-in checkbox and John's consent wording.
+- Conferences: 4-photo "On the road" collage, "Mon" placeholder stat replaced with "100s of practices supported", 1000px headshot.
+- Reviews: Google logo lock-up in the hero card and section header.
+- Specialty Practice: hero headline rebalanced (no more one word per line).
+- New Blog hub page (`blog.html`) with 16 demo posts, featured post, category tags, infinite scroll with a Load more fallback. Linked from the About menu and footer.
 ### 2026-10-08 – build 6a (repo package)
 - Unpacked single-file bundles into shared assets; pages are 25–140 KB instead of 9–17 MB each.
 - 8 service pages: "See all practice types" link repointed from the removed `areas-of-focus.html` to `index.html#focus`.

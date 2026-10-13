@@ -465,7 +465,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
     }
     @media (max-width: 760px) {
       .fp-section { padding-top: 64px !important; padding-bottom: 64px !important; }
-      .fp-svc { grid-template-columns: 1fr !important; }
+      .fp-svc { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
       .fp-stats { grid-template-columns: 1fr 1fr !important; }
       .fp-months { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
       nav { padding: 10px 14px !important; gap: 10px !important; }
@@ -482,6 +482,8 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
     }
     @media (max-width: 560px) { h1, h2, h3 { overflow-wrap: anywhere; } h2 { font-size: 30px !important; } }
   </style>
+  <link rel="stylesheet" href="assets/vm-r2.css">
+  <script src="assets/vm-r2.js" defer></script>
 </helmet>
 
 <div style="position: fixed; top: 0px; left: 0; right: 0; z-index: 100; display: flex; justify-content: center; padding: 0; transition: top 0.55s cubic-bezier(0.22, 1, 0.36, 1), padding 0.55s cubic-bezier(0.22, 1, 0.36, 1);" ref="{{ navWrapRef }}">
@@ -500,7 +502,6 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
           </sc-if>
         </div>
       </sc-for>
-      <a href="free-veterinary-marketing-analysis.html" style="{{ navFaStyle }}" style-hover="background: rgba(34,62,107,0.07);">Free Competitive Analysis</a>
       <a href="contact-us.html" style="{{ navContactStyle }}" style-hover="background: rgba(34,62,107,0.07);">Contact</a>
     </div>
     <a href="#request-info" sc-camel-on-click="{{ openReq }}" class="vm-nav-cta" style="flex: 0 0 auto; white-space: nowrap; background: #F3B23E; color: #223E6B; font-family: 'polymath-text', sans-serif; font-size: 14.5px; font-weight: 800; padding: 10px 22px; border-radius: 999px; border: 2px solid #223E6B; box-shadow: 0 3px 0 #223E6B; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;" style-hover="background: #FFBA2E; color: #223E6B; transform: translateY(-2px); box-shadow: 0 5px 0 #223E6B;">Request Info</a>
@@ -591,7 +592,6 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   <svg width="18" height="18" sc-camel-view-box="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.4-11.3-8.1l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.7-.4-3.9z"></path></svg>
   <span style="font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 800; color: #223E6B;">5.0</span>
   <span style="color: #F3B23E; font-size: 13px; letter-spacing: 2px;">★★★★★</span>
-  <span style="font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 700; color: #223E6B; border-left: 1px solid rgba(34,62,107,0.2); padding-left: 10px; margin-left: 2px; white-space: nowrap;">{{ reviewCountLabel }}</span>
 </a>
 
 <section id="top" data-screen-label="Hero" style="position: relative; overflow: hidden; background: linear-gradient(180deg, #EEF3FB 0%, #FFFFFF 100%);">
@@ -604,7 +604,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
       <h1 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: clamp(38px, 4.6vw, 62px); line-height: 1.04; color: #223E6B; margin: 0 0 22px; max-width: 620px; text-wrap: balance;">Multi-location veterinary marketing that grows every location, not just your first</h1>
       <p style="font-size: 19px; line-height: 1.6; color: #333333; max-width: 560px; margin: 0 0 32px;">Opening a second, third or tenth location means you've built something that works. Your teams practice quality medicine across multiple communities, and pet parents trust your name. But marketing a group of practices is a whole different job from marketing one.</p>
       <div class="fp-hero-ctas" style="display: flex; flex-direction: column; align-items: flex-start; gap: 18px;" data-comment-anchor="978037c6cb-div">
-        <a href="https://wizard.veterinarymarketing.com/your-veterinary-practice" class="vm-pill" style="display: inline-block; white-space: nowrap; background: #F3B23E; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 15px 32px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;" style-hover="background: #FFBA2E; transform: translateY(-2px); box-shadow: 0 6px 0 #223E6B;">Book your free practice review →</a>
+        <a href="#request-info" sc-camel-on-click="{{ openReq }}" class="vm-pill" style="display: inline-block; white-space: nowrap; background: #F3B23E; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 15px 32px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;" style-hover="background: #FFBA2E; transform: translateY(-2px); box-shadow: 0 6px 0 #223E6B;">Request information →</a>
         <a href="tel:+18448440338" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'polymath-text', sans-serif; font-size: 15.5px; font-weight: 700; color: #223E6B;" style-hover="color: #2F5694;"><span style="width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid rgba(34,62,107,0.3); display: inline-flex; align-items: center; justify-content: center;"><svg width="15" height="15" sc-camel-view-box="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"></path></svg></span>Or call us directly: (844) 844-0338</a>
       </div>
     </div>
@@ -613,7 +613,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
         <img src="assets/focus-multi-dd813239dd.webp" alt="Veterinary team at one of several hospital locations" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; background: #D9E2F0; border-radius: 40% 60% 44% 56% / 48% 42% 58% 52%;">
       </div>
       <div style="position: absolute; left: -18px; bottom: 28px; background: #fff; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; border-radius: 18px; padding: 14px 18px; display: flex; flex-direction: column; gap: 2px;">
-        <div style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 26px; line-height: 1; color: #2F5694;">200+</div>
+        <div style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 26px; line-height: 1; color: #2F5694;" data-count="200+">200+</div>
         <div style="font-size: 12.5px; font-weight: 700; color: #223E6B; letter-spacing: 0.04em;">practices served</div>
       </div>
       <div style="position: absolute; right: -14px; top: 26px; background: #223E6B; color: #fff; border-radius: 999px; padding: 10px 16px; display: flex; align-items: center; gap: 8px; font-family: 'polymath-text', sans-serif; font-size: 13.5px; font-weight: 700; box-shadow: 0 12px 30px rgba(34,62,107,0.3);"><span style="color: #F3B23E; letter-spacing: 1px;">★★★★★</span>5.0 on Google</div>
@@ -625,7 +625,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   <div class="fp-stats vm-reveal" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid #D9E2F0; border-radius: 18px; overflow: hidden; background: #fff;">
     <sc-for list="{{ stats }}" as="st" hint-placeholder-count="4">
       <div style="padding: 26px 28px; border-right: 1px solid #D9E2F0; display: flex; flex-direction: column; gap: 4px;">
-        <div class="fp-count" data-count="{{ st.value }}" style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 34px; line-height: 1; color: #2F5694; font-variant-numeric: tabular-nums;">{{ st.value }}</div>
+        <div class="fp-count" data-count="{{ st.value }}" data-from="{{ st.from }}" style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 34px; line-height: 1; color: #2F5694; font-variant-numeric: tabular-nums;">{{ st.value }}</div>
         <div style="font-size: 14px; color: #333333;">{{ st.label }}</div>
       </div>
     </sc-for>
@@ -764,15 +764,15 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
     </div>
     <p style="font-size: 18px; line-height: 1.6; color: #333333; max-width: 400px; margin: 0;">One brand, many doors. Every location gets its own plan.</p>
   </div>
-  <div class="fp-svc" style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px;">
-    <sc-for list="{{ services }}" as="svc" hint-placeholder-count="4">
-      <a href="{{ svc.href }}" class="vm-reveal" style="display: flex; flex-direction: column; color: inherit; border: 1px solid rgba(34,62,107,0.16); border-radius: 22px; padding: 38px 36px 40px; transition: border-color 0.2s, background 0.2s;" style-hover="border-color: #2F5694; background: rgba(116,155,234,0.08);">
-        <div style="height: 220px; margin-bottom: 24px;">
+  <div class="fp-svc vm-svc8" style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px;">
+    <sc-for list="{{ services }}" as="svc" hint-placeholder-count="8">
+      <a href="{{ svc.href }}" class="vm-reveal" style="display: flex; flex-direction: column; color: inherit; border: 1px solid rgba(34,62,107,0.16); border-radius: 22px; padding: 22px 20px 22px; transition: border-color 0.2s, background 0.2s;" style-hover="border-color: #2F5694; background: rgba(116,155,234,0.08);">
+        <div style="height: 120px; margin-bottom: 16px;">
           <div role="img" aria-label="{{ svc.name }} example" style="{{ svc.imgStyle }}"></div>
         </div>
-        <h3 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 23px; color: #223E6B; margin: 0 0 10px;">{{ svc.name }}</h3>
-        <p style="font-size: 15px; line-height: 1.6; color: #333333; margin: 0;">{{ svc.body }}</p>
-        <div style="display: flex; align-items: center; gap: 6px; font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 700; color: #2F5694; margin-top: auto; padding-top: 16px;">{{ svc.proof }}</div>
+        <h3 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 18px; line-height: 1.2; color: #223E6B; margin: 0 0 8px;">{{ svc.name }}</h3>
+        <p style="font-size: 13.5px; line-height: 1.5; color: #333333; margin: 0;">{{ svc.body }}</p>
+        <div style="display: flex; align-items: center; gap: 6px; font-family: 'polymath-text', sans-serif; font-size: 13.5px; font-weight: 700; color: #2F5694; margin-top: auto; padding-top: 12px;">{{ svc.proof }}</div>
       </a>
     </sc-for>
   </div>
@@ -818,7 +818,6 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
       <svg width="18" height="18" sc-camel-view-box="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.4-11.3-8.1l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.7-.4-3.9z"></path></svg>
       <span style="font-family: 'polymath-text', sans-serif; font-size: 14px; font-weight: 800; color: #223E6B;">5.0</span>
       <span style="color: #F3B23E; font-size: 12px; letter-spacing: 2px;">★★★★★</span>
-      <span style="font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 600; color: #333333;">{{ reviewCountLabel }}</span>
     </div>
   </div>
   <div class="vm-reviews-grid vm-reveal" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
@@ -839,7 +838,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
     </sc-for>
   </div>
   <div class="vm-reveal" style="margin-top: 40px; text-align: center;">
-    <a href="reviews.html" style="font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 800; color: #2F5694; display: inline-flex; align-items: center; gap: 8px; border-bottom: 2px solid rgba(47,86,148,0.3); padding-bottom: 3px;" style-hover="color: #223E6B; border-color: #223E6B;">Read all {{ reviewCountLabel }} →</a>
+    <a href="reviews.html" style="font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 800; color: #2F5694; display: inline-flex; align-items: center; gap: 8px; border-bottom: 2px solid rgba(47,86,148,0.3); padding-bottom: 3px;" style-hover="color: #223E6B; border-color: #223E6B;">Read all our Google reviews →</a>
   </div>
 </section>
 
@@ -852,7 +851,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   <div class="fp-grid4" style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px;">
     <sc-for list="{{ reasons }}" as="rs" hint-placeholder-count="4">
       <div class="vm-reveal" style="text-align: center; padding: 8px 12px;">
-        <div style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 44px; line-height: 1; color: #2F5694; margin-bottom: 14px;">{{ rs.value }}</div>
+        <div style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 44px; line-height: 1; color: #2F5694; margin-bottom: 14px;" data-count="{{ rs.countVal }}" data-from="{{ rs.from }}">{{ rs.value }}</div>
         <h3 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 19px; line-height: 1.25; color: #223E6B; margin: 0 0 8px;">{{ rs.title }}</h3>
         <p style="font-size: 15px; line-height: 1.6; color: #333333; margin: 0;">{{ rs.body }}</p>
       </div>
@@ -863,11 +862,11 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
 <section id="book" data-screen-label="CTA" style="max-width: 1240px; margin: 0 auto; padding: 0 32px 110px; box-sizing: border-box;">
   <div class="fp-cta-card vm-reveal" style="position: relative; background: #2F5694; border-radius: 28px; padding: 108px 80px 60px; text-align: center;">
     <img src="assets/analysis-peek-2-b66f07cef4.webp" alt="" aria-hidden="true" class="fp-cta-peek" style="position: absolute; top: -110px; left: 50%; transform: translateX(-50%); width: 220px; height: auto; pointer-events: none;">
-    <div style="font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #749BEA; margin-bottom: 18px;">Free group review</div>
+    <div style="font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #749BEA; margin-bottom: 18px;">Next step</div>
     <h2 class="vm-cta-head" data-lit="#FFFFFF" data-dim="rgba(255,255,255,0.28)" style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: clamp(32px, 3.6vw, 50px); line-height: 1.1; color: #fff; margin: 0 auto 18px; max-width: 760px; text-wrap: balance;"><span data-w="1" style="transition: color 0.4s ease;">Let's </span><span data-w="1" style="transition: color 0.4s ease;">grow </span><span data-w="1" style="transition: color 0.4s ease;">every </span><span data-w="1" style="transition: color 0.4s ease;">location.</span></h2>
-    <p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.88); max-width: 680px; margin: 0 auto 32px; text-wrap: pretty;">The right multi-location veterinary marketing plan treats every hospital like its own business, under one strong brand. Book a call and we'll review each location's website presence, Google Business Profile and local rankings. Then we'll show you where calls are going to the wrong place, which locations are falling behind and how to grow all of them.</p>
+    <p style="font-size: 18px; line-height: 1.6; color: rgba(255,255,255,0.88); max-width: 680px; margin: 0 auto 32px; text-wrap: pretty;">The right multi-location veterinary marketing plan treats every hospital like its own business, under one strong brand. Request information and we'll review each location's website presence, Google Business Profile and local rankings. Then we'll show you where calls are going to the wrong place, which locations are falling behind and how to grow all of them.</p>
     <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
-      <a href="https://wizard.veterinarymarketing.com/your-veterinary-practice" class="vm-pill" style="display: inline-block; white-space: nowrap; background: #F3B23E; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 16px 36px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;" style-hover="background: #FFBA2E; transform: translateY(-2px); box-shadow: 0 6px 0 #223E6B;">Book your free practice review →</a>
+      <a href="#request-info" sc-camel-on-click="{{ openReq }}" class="vm-pill" style="display: inline-block; white-space: nowrap; background: #F3B23E; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 16px 36px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;" style-hover="background: #FFBA2E; transform: translateY(-2px); box-shadow: 0 6px 0 #223E6B;">Request information →</a>
       <a href="tel:+18448440338" style="font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 700; color: #fff;" style-hover="color: #F3B23E;">Or call us directly: (844) 844-0338</a>
     </div>
   </div>
@@ -956,7 +955,6 @@ class Component extends DCLogic {
         requestAnimationFrame(tick);
       });
     }, { threshold: 0.5 });
-    document.querySelectorAll('.fp-count').forEach(el => this.countObserver.observe(el));
     this.onScroll = () => {
       if (this.raf) return;
       this.raf = requestAnimationFrame(() => { this.raf = null; this.update(); });
@@ -1082,7 +1080,7 @@ class Component extends DCLogic {
         { title: 'Company', links: [{ label: 'About', href: 'about.html' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Conferences', href: 'conferences.html' }, { label: 'Contact', href: 'contact-us.html' }] },
         { title: 'Services', links: serviceLinks },
         { title: 'Areas of Focus', links: focusNames.map(n => ({ label: n, href: focusFiles[n] })) },
-        { title: 'Resources', links: [{ label: 'Blog', href: 'https://www.veterinarymarketing.com/blog' }, { label: 'Free Competitive Analysis', href: 'free-veterinary-marketing-analysis.html' }] }
+        { title: 'Resources', links: [{ label: 'Blog', href: 'blog.html' }, { label: 'Free Competitive Analysis', href: 'free-veterinary-marketing-analysis.html' }] }
       ],
       navWrapRef: this.navWrapRef, navPillRef: this.navPillRef, navLogoRef: this.navLogoRef,
       mobileOpen: this.state.mobileOpen,
@@ -1090,8 +1088,7 @@ class Component extends DCLogic {
       toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen, mobileSub: null })),
       closeMobile: () => this.setState({ mobileOpen: false, mobileSub: null }),
       mobileTop: [
-        { label: 'About', href: 'about.html' }, { label: 'Services', sub: 'services' }, { label: 'Areas of Focus', sub: 'focus' }, { label: 'Reviews', href: 'reviews.html' },
-        { label: 'Free Competitive Analysis', href: 'free-veterinary-marketing-analysis.html' }, { label: 'Contact', href: 'contact-us.html' }
+        { label: 'About', href: 'about.html' }, { label: 'Services', sub: 'services' }, { label: 'Areas of Focus', sub: 'focus' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Contact', href: 'contact-us.html' }
       ].map(l => { const on = isHere(l.href) || (l.sub === 'services' && serviceLinks.some(s => isHere(s.href))) || (l.sub === 'focus' && focusNames.some(nm => isHere(focusFiles[nm]))); return { ...l, isLink: !l.sub, hasSub: !!l.sub, openSub: () => this.setState({ mobileSub: l.sub }), rowStyle: 'color: #223E6B; font-weight: 700; font-size: 16px; padding: 13px 14px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; box-sizing: border-box; background: none; border: 0; font-family: inherit; text-align: left; cursor: pointer;' + (on ? ' background: rgba(34,62,107,0.07); box-shadow: inset 3px 0 0 #F3B23E;' : '') }; }),
       mobileSubTitle: this.state.mobileSub === 'focus' ? 'Areas of Focus' : 'Services',
       mobileSubLinks: this.state.mobileSub === 'focus' ? focusNames.map(n => ({ label: n, href: focusFiles[n] })) : serviceLinks,
@@ -1100,7 +1097,7 @@ class Component extends DCLogic {
       mobilePageStyle: 'width: 50%; flex: 0 0 50%; display: flex; flex-direction: column; gap: 2px; box-sizing: border-box; padding: 16px;',
       ...this.reqVals(), closeMenu: () => this.state.openMenu && this.setState({ openMenu: null }),
       navMenus: [
-        { key: 'about', label: 'About', href: 'about.html', items: [{ label: 'About Us', href: 'about.html' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Conferences', href: 'conferences.html' }, { label: 'Our Blog', href: 'https://www.veterinarymarketing.com/blog' }] },
+        { key: 'about', label: 'About', href: 'about.html', items: [{ label: 'About Us', href: 'about.html' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Conferences', href: 'conferences.html' }, { label: 'Our Blog', href: 'blog.html' }] },
         { key: 'services', label: 'Services', href: undefined, items: serviceLinks },
         { key: 'focus', label: 'Areas of Focus', href: undefined, items: focusNames.map(n => ({ label: n, href: focusFiles[n] })) }
       ].map(m => ({ ...m, isOpen: this.state.openMenu === m.key, open: () => this.setState({ openMenu: m.key }), parentStyle: activeParentStyle(isHere(m.href) || m.items.some(it => isHere(it.href))), items: m.items.map(it => ({ ...it, itemStyle: isHere(it.href) ? 'color: #2F5694; font-weight: 700; padding: 8px 12px; border-radius: 10px; font-size: 14px; background: rgba(47,86,148,0.08);' : 'color: #333333; font-weight: 400; padding: 8px 12px; border-radius: 10px; font-size: 14px;' })) })),
@@ -1111,19 +1108,28 @@ class Component extends DCLogic {
         { value: '200+', label: 'veterinary practices served' },
         { value: '5.0', label: 'Google rating from the practices we serve' },
         { value: '26x', label: 'average return on ad spend' },
-        { value: '2 hrs', label: 'response time when you reach out' }
-      ],
+        { value: '< 2 hrs', from: '48', label: 'response time when you reach out' }
+      ].map(s => ({ ...s, from: s.from || '' })),
       pains: P.pains.items.map((s, i) => { const t = splitLead(s); return { n: (i + 1 < 10 ? '0' : '') + (i + 1), title: t.lead, body: t.rest }; }),
       painsHasOutro: !!P.pains.outro, painsOutro: P.pains.outro || '',
       painsHasCta: !!P.pains.cta, painsCta: P.pains.cta || '',
-      services: P.services.items.map((s, i) => ({ ...s, name: svcMeta[i][0], href: svcMeta[i][2], imgStyle: { width: '100%', height: '100%', backgroundImage: 'url("' + asset(svcMeta[i][1]) + '")', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', filter: 'drop-shadow(0 14px 22px rgba(34,62,107,0.22))' } })),
+      services: [
+        { name: 'Veterinary Websites', img: asset('assets/opt/svc-websites.webp'), href: 'veterinary-websites.html', body: 'Custom sites built around SEO, AEO and user experience. No templates, live in under 25 days.' },
+        { name: 'Veterinary SEO', img: asset('assets/opt/svc-seo.webp'), href: 'veterinary-seo-marketing.html', body: 'A page for every service, local keywords, weekly posts and an optimized Google Business Profile.' },
+        { name: 'Veterinary AEO', img: 'assets/aeo-ai-tools-e5df6239a0.webp', href: 'veterinary-aeo.html', body: 'Get recommended by ChatGPT, Google AI Overviews and other AI tools when pet owners ask for a vet.' },
+        { name: 'Google Ads / PPC', img: asset('assets/opt/svc-googleadwords.webp'), href: 'veterinary-ppc-marketing.html', body: 'Dedicated campaigns with a lower cost per click and no management fee on your ad spend.' },
+        { name: 'ChatGPT Ads', img: 'assets/chatgpt-ads-card-c9a172c3d6.webp', href: 'veterinary-chatgpt-ads.html', body: 'Reach local pet owners while they ask AI for help. Target by zip code, track ROI.' },
+        { name: 'Social Media Ads', img: asset('assets/opt/svc-social-media.webp'), href: 'veterinary-social-media-marketing.html', body: 'Meta Ads with precise local targeting, brand awareness campaigns and every dollar tracked.' },
+        { name: 'Social Media Posting', img: 'assets/social-posting-iphone-491ae9f79d.webp', href: 'veterinary-social-media-posting.html', body: 'Custom content every week, made for your practice. No cookie-cutter posts.' },
+        { name: 'Direct Mail', img: 'assets/directmail-b55a595947.png', href: 'veterinary-direct-mail-marketing.html', body: 'Postcards to website visitors who did not book, within 3 days, tracked in the same dashboard.' }
+      ].map((s, i) => { const o = { 0: 0, 1: 1, 3: 2, 5: 3 }[i]; const src = o === undefined ? null : P.services.items[o]; return { ...s, body: src && src.body ? src.body : s.body, proof: 'Learn more →', imgStyle: { width: '100%', height: '100%', backgroundImage: `url("${asset(s.img)}")`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', filter: 'drop-shadow(0 10px 16px rgba(34,62,107,0.18))' } }; }),
       metrics: P.dash.metrics,
       reasons: [
         { value: '2019', title: 'Veterinary only, since 2019', body: P.why.r1 },
-        { value: '2 hrs', title: '2-hour response time', body: 'When you reach out, you hear back fast, not days later.' },
-        { value: '< 6 hrs', title: 'Website edits done fast', body: P.why.r3 },
+        { value: '< 2 hrs', from: '48', title: '2-hour response time', body: 'When you reach out, you hear back fast, not days later.' },
+        { value: '< 6 hrs', from: '72', title: 'Website edits done fast', body: P.why.r3 },
         { value: '5.0★', title: 'Five-star Google rating', body: 'From the practices we serve.' }
-      ]
+      ].map(r => ({ ...r, countVal: r.from ? r.value : '', from: r.from || '' })),
     };
   }
 }

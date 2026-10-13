@@ -928,6 +928,8 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
     @keyframes vmTrustPan { from { transform: translate(-50%, -50%) scale(1.06); } to { transform: translate(-52%, -49%) scale(1.14); } }
     @media (prefers-reduced-motion: reduce) { .vm-trust-bg { animation: none !important; } }
   </style>
+  <link rel="stylesheet" href="assets/vm-r2.css">
+  <script src="assets/vm-r2.js" defer></script>
 </helmet>
 
 <div style="position: fixed; top: 0px; left: 0; right: 0; z-index: 100; display: flex; justify-content: center; padding: 0; transition: top 0.55s cubic-bezier(0.22, 1, 0.36, 1), padding 0.55s cubic-bezier(0.22, 1, 0.36, 1);" ref="{{ navWrapRef }}">
@@ -946,7 +948,6 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
           </sc-if>
         </div>
       </sc-for>
-      <a href="free-veterinary-marketing-analysis.html" style="{{ navFaStyle }}" style-hover="background: rgba(34,62,107,0.07);">Free Competitive Analysis</a>
       <a href="contact-us.html" style="{{ navContactStyle }}" style-hover="background: rgba(34,62,107,0.07);">Contact</a>
     </div>
     <a href="#request-info" sc-camel-on-click="{{ openReq }}" class="vm-nav-cta" style="flex: 0 0 auto; white-space: nowrap; background: #F3B23E; color: #223E6B; font-family: 'polymath-text', sans-serif; font-size: 14.5px; font-weight: 800; padding: 10px 22px; border-radius: 999px; border: 2px solid #223E6B; box-shadow: 0 3px 0 #223E6B; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;" style-hover="background: #FFBA2E; color: #223E6B; transform: translateY(-2px); box-shadow: 0 5px 0 #223E6B;">Request Info</a>
@@ -1037,7 +1038,6 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   <svg width="18" height="18" sc-camel-view-box="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.4-11.3-8.1l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.7-.4-3.9z"></path></svg>
   <span style="font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 800; color: #223E6B;">5.0</span>
   <span style="color: #F3B23E; font-size: 13px; letter-spacing: 2px;">★★★★★</span>
-  <span style="font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 700; color: #223E6B; border-left: 1px solid rgba(34,62,107,0.2); padding-left: 10px; margin-left: 2px; white-space: nowrap;">{{ reviewCountLabel }}</span>
 </a>
 
 <div id="top" style="height: 100vh; min-height: 640px; display: flex; flex-direction: column; box-sizing: border-box; position: fixed; top: 0; left: 0; right: 0; z-index: 0;">
@@ -1052,7 +1052,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
     <p style="font-size: 19px; line-height: 1.55; color: #333333; max-width: 560px; margin: 0 auto 30px;">Websites, search, and ads built exclusively for veterinary teams, from a pet owner's first search to a booked appointment.</p>
     <div class="vm-hero-ctas" style="display: flex; gap: 14px; justify-content: center;">
       <a href="#request-info" sc-camel-on-click="{{ openReq }}" style="white-space: nowrap; background: #F3B23E; color: #223E6B; font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 800; padding: 14px 30px; border-radius: 999px; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;" style-hover="background: #FFBA2E; color: #223E6B; transform: translateY(-3px); box-shadow: 0 7px 0 #223E6B;">Request Info</a>
-      <a href="https://wizard.veterinarymarketing.com/your-veterinary-practice" style="white-space: nowrap; background: #fff; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 800; padding: 14px 30px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;" style-hover="background: #EDF7FC; color: #223E6B; transform: translateY(-3px); box-shadow: 0 7px 0 #223E6B;">Free Competitive Analysis</a>
+      <a href="https://wizard.veterinarymarketing.com/your-veterinary-practice" target="_blank" rel="noopener" style="white-space: nowrap; background: #fff; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 800; padding: 14px 30px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;" style-hover="background: #EDF7FC; color: #223E6B; transform: translateY(-3px); box-shadow: 0 7px 0 #223E6B;">Free Competitive Analysis</a>
     </div>
   </div>
   <div style="flex: 1 1 auto; min-height: 0; background: url(&quot;assets/hero-dog-cat-55839ef815.webp&quot;) center bottom / contain no-repeat, url(&quot;assets/hero-backdrop-2-db61db92cc.webp&quot;) center 70% / contain no-repeat; margin-top: 24px;" role="img" aria-label="A dog and cat looking at the camera"></div>
@@ -1150,7 +1150,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
     <div class="vm-reveal" style="margin-top: 72px; text-align: center;">
       <h3 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: clamp(28px, 3vw, 40px); line-height: 1.15; color: #223E6B; margin: 0 0 14px;" class="vm-cta-head"><span data-w="1" style="transition: color 0.4s ease;">Whatever </span><span data-w="1" style="transition: color 0.4s ease;">kind </span><span data-w="1" style="transition: color 0.4s ease;">of </span><span data-w="1" style="transition: color 0.4s ease;">practice </span><span data-w="1" style="transition: color 0.4s ease;">you </span><span data-w="1" style="transition: color 0.4s ease;">run, </span><span data-w="1" style="transition: color 0.4s ease;">we </span><span data-w="1" style="transition: color 0.4s ease;">already </span><span data-w="1" style="transition: color 0.4s ease;">speak </span><span data-w="1" style="transition: color 0.4s ease;">it. </span></h3>
       <p style="font-size: 19px; line-height: 1.6; color: #333333; max-width: 720px; margin: 0 auto 30px;">Tell us which one is yours and we’ll show you exactly where the growth is.</p>
-      <a href="https://wizard.veterinarymarketing.com/your-veterinary-practice" class="vm-pill" style="display: inline-block; background: #F3B23E; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 15px 34px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 6px 0 #223E6B;">Get your free competitive analysis →</a>
+      <a href="#request-info" sc-camel-on-click="{{ openReq }}" class="vm-pill" style="display: inline-block; background: #F3B23E; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 15px 34px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 6px 0 #223E6B;">Request information →</a>
     </div>
   </div>
 </section>
@@ -1181,7 +1181,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   <div class="vm-reveal" style="margin-top: 72px; text-align: center;">
     <h3 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: clamp(28px, 3vw, 40px); line-height: 1.15; color: #223E6B; margin: 0 0 14px;" class="vm-cta-head"><span data-w="1" style="transition: color 0.4s ease;">Not </span><span data-w="1" style="transition: color 0.4s ease;">sure </span><span data-w="1" style="transition: color 0.4s ease;">which </span><span data-w="1" style="transition: color 0.4s ease;">service </span><span data-w="1" style="transition: color 0.4s ease;">moves </span><span data-w="1" style="transition: color 0.4s ease;">the </span><span data-w="1" style="transition: color 0.4s ease;">needle </span><span data-w="1" style="transition: color 0.4s ease;">first? </span></h3>
     <p style="font-size: 19px; line-height: 1.6; color: #333333; max-width: 720px; margin: 0 auto 30px;">Your free analysis shows exactly where to start. No guesswork, no long-term contract.</p>
-    <a href="https://wizard.veterinarymarketing.com/your-veterinary-practice" class="vm-pill" style="display: inline-block; white-space: nowrap; background: #F3B23E; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 15px 34px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 6px 0 #223E6B;">Get your free competitive analysis →</a>
+    <a href="#request-info" sc-camel-on-click="{{ openReq }}" class="vm-pill" style="display: inline-block; white-space: nowrap; background: #F3B23E; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 15px 34px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 6px 0 #223E6B;">Request information →</a>
   </div>
 </section>
 
@@ -1219,7 +1219,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   <div class="vm-reveal" style="margin-top: 72px; text-align: center;">
     <h3 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: clamp(28px, 3vw, 40px); line-height: 1.15; color: #223E6B; margin: 0 0 14px;" class="vm-cta-head"><span data-w="1" style="transition: color 0.4s ease;">Small </span><span data-w="1" style="transition: color 0.4s ease;">budgets. </span><span data-w="1" style="transition: color 0.4s ease;">No </span><span data-w="1" style="transition: color 0.4s ease;">long-term </span><span data-w="1" style="transition: color 0.4s ease;">contracts. </span><span data-w="1" style="transition: color 0.4s ease;">Big </span><span data-w="1" style="transition: color 0.4s ease;">results. </span></h3>
     <p style="font-size: 19px; line-height: 1.6; color: #333333; max-width: 720px; margin: 0 auto 30px;">Marketing that pays for itself, from a team that treats your practice like our own.</p>
-    <a href="https://wizard.veterinarymarketing.com/your-veterinary-practice" class="vm-pill" style="display: inline-block; white-space: nowrap; background: #F3B23E; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 15px 34px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 6px 0 #223E6B;">Start with a free analysis →</a>
+    <a href="#request-info" sc-camel-on-click="{{ openReq }}" class="vm-pill" style="display: inline-block; white-space: nowrap; background: #F3B23E; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 15px 34px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 6px 0 #223E6B;">Request information →</a>
   </div>
 </section>
 
@@ -1247,7 +1247,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   <div class="vm-reveal" style="grid-column: 1 / -1; margin-top: 48px; text-align: center;">
     <h3 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: clamp(28px, 3vw, 40px); line-height: 1.15; color: #223E6B; margin: 0 0 14px;" class="vm-cta-head"><span data-w="1" style="transition: color 0.4s ease;">Meet </span><span data-w="1" style="transition: color 0.4s ease;">the </span><span data-w="1" style="transition: color 0.4s ease;">team </span><span data-w="1" style="transition: color 0.4s ease;">that </span><span data-w="1" style="transition: color 0.4s ease;">answers </span><span data-w="1" style="transition: color 0.4s ease;">on </span><span data-w="1" style="transition: color 0.4s ease;">the </span><span data-w="1" style="transition: color 0.4s ease;">first </span><span data-w="1" style="transition: color 0.4s ease;">ring. </span></h3>
     <p style="font-size: 19px; line-height: 1.6; color: #333333; max-width: 720px; margin: 0 auto 30px;">Talk to a real person about your practice today. No phone trees, no waiting.</p>
-    <a href="https://wizard.veterinarymarketing.com/your-veterinary-practice" class="vm-pill" style="display: inline-block; white-space: nowrap; background: #F3B23E; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 15px 34px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 6px 0 #223E6B;">Talk to our team →</a>
+    <a href="#request-info" sc-camel-on-click="{{ openReq }}" class="vm-pill" style="display: inline-block; white-space: nowrap; background: #F3B23E; color: #223E6B; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 15px 34px; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 6px 0 #223E6B;">Talk to our team →</a>
   </div>
 </section>
 
@@ -1278,27 +1278,6 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   </div>
 </section>
 
-<section id="analysis" style="max-width: 1240px; margin: 0 auto; padding: 0 32px 110px; box-sizing: border-box;">
-  <div class="vm-reveal" style="position: relative; background: #2F5694; border-radius: 28px; padding: 72px 76px;">
-    <img src="assets/analysis-peek-2-b66f07cef4.webp" alt="" aria-hidden="true" class="vm-analysis-peek-img" style="position: absolute; top: -128px; left: 64px; width: 250px; height: auto; pointer-events: none;">
-    <div class="vm-analysis-grid" style="position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 48px 72px; align-items: center;">
-      <div>
-        <div style="font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #749BEA; margin-bottom: 18px;">Free competitive analysis</div>
-        <h2 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: clamp(30px, 3.2vw, 44px); line-height: 1.12; color: #fff; margin: 0 0 20px; max-width: 460px;">See how your practice stacks up</h2>
-        <p style="font-size: 16.5px; line-height: 1.7; color: rgba(255,255,255,0.88); margin: 0; max-width: 460px;">We'll map your visibility against the practices competing for the same pet owners: search, reviews, and ads. No commitment, no sales script.</p>
-      </div>
-      <div>
-        <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;">
-          <div style="display: flex; gap: 12px; align-items: center;"><span class="material-symbols-rounded" aria-hidden="true" style="font-size: 21px; color: #749BEA;">check_circle</span><span style="font-size: 15.5px; color: rgba(255,255,255,0.92);">Your local search visibility, scored against nearby practices</span></div>
-          <div style="display: flex; gap: 12px; align-items: center;"><span class="material-symbols-rounded" aria-hidden="true" style="font-size: 21px; color: #749BEA;">check_circle</span><span style="font-size: 15.5px; color: rgba(255,255,255,0.92);">Side-by-side on search, reviews, and ads</span></div>
-          <div style="display: flex; gap: 12px; align-items: center;"><span class="material-symbols-rounded" aria-hidden="true" style="font-size: 21px; color: #749BEA;">check_circle</span><span style="font-size: 15.5px; color: rgba(255,255,255,0.92);">No form to fill out. It runs on our analysis page</span></div>
-        </div>
-        <a href="https://wizard.veterinarymarketing.com/your-veterinary-practice" class="vm-pill" style="display: inline-block; white-space: nowrap; background: #F3B23E; color: #223E6B; font-family: 'polymath-text', sans-serif; font-size: 16px; font-weight: 800; padding: 15px 34px; border-radius: 999px; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;" style-hover="background: #FFBA2E; color: #223E6B; transform: translateY(-3px); box-shadow: 0 7px 0 #223E6B;">Get my free analysis →</a>
-        <div style="font-size: 13.5px; color: rgba(255,255,255,0.65); margin-top: 16px;">Takes about two minutes. No spam, no sales script.</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <footer id="contact" style="background: #223E6B;">
@@ -1502,7 +1481,7 @@ class Component extends DCLogic {
     const activeStyle = (on) => on ? 'color: #223E6B; padding: 8px 12px; border-radius: 999px; background: rgba(34,62,107,0.07); box-shadow: inset 0 -2px 0 #F3B23E;' : 'color: #223E6B; padding: 8px 12px; border-radius: 999px;';
     const activeParentStyle = (on) => (on ? 'background: rgba(34,62,107,0.07); box-shadow: inset 0 -2px 0 #F3B23E; ' : '') + 'color: #223E6B; padding: 8px 12px; border-radius: 999px; display: inline-flex; cursor: pointer; align-items: center; gap: 5px;';
     const menus = [
-      { key: 'about', label: 'About', href: 'about.html', items: [{ label: 'About Us', href: 'about.html' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Conferences', href: 'conferences.html' }, { label: 'Our Blog', href: 'https://www.veterinarymarketing.com/blog' }] },
+      { key: 'about', label: 'About', href: 'about.html', items: [{ label: 'About Us', href: 'about.html' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Conferences', href: 'conferences.html' }, { label: 'Our Blog', href: 'blog.html' }] },
       { key: 'services', label: 'Services', href: undefined, items: serviceLinks },
       { key: 'focus', label: 'Areas of Focus', href: undefined, items: focusAreas.map(a => ({ label: a.name, href: a.href })) }
     ];
@@ -1611,8 +1590,7 @@ class Component extends DCLogic {
       toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen, mobileSub: null })),
       closeMobile: () => this.setState({ mobileOpen: false, mobileSub: null }),
       mobileTop: [
-        { label: 'About', href: 'about.html' }, { label: 'Services', sub: 'services' }, { label: 'Areas of Focus', sub: 'focus' }, { label: 'Reviews', href: 'reviews.html' },
-        { label: 'Free Competitive Analysis', href: 'free-veterinary-marketing-analysis.html' }, { label: 'Contact', href: 'contact-us.html' }
+        { label: 'About', href: 'about.html' }, { label: 'Services', sub: 'services' }, { label: 'Areas of Focus', sub: 'focus' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Contact', href: 'contact-us.html' }
       ].map(l => { const on = isHere(l.href) || (l.sub === 'services' && serviceLinks.some(s => isHere(s.href))) || (l.sub === 'focus' && focusAreas.some(a => isHere(a.href))); return { ...l, isLink: !l.sub, hasSub: !!l.sub, openSub: () => this.setState({ mobileSub: l.sub }), rowStyle: 'color: #223E6B; font-weight: 700; font-size: 16px; padding: 13px 14px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; box-sizing: border-box; background: none; border: 0; font-family: inherit; text-align: left; cursor: pointer;' + (on ? ' background: rgba(34,62,107,0.07); box-shadow: inset 3px 0 0 #F3B23E;' : '') }; }),
       mobileSubTitle: this.state.mobileSub === 'focus' ? 'Areas of Focus' : 'Services',
       mobileSubLinks: this.state.mobileSub === 'focus' ? focusAreas.map(a => ({ label: a.name, href: a.href })) : serviceLinks,
@@ -1635,7 +1613,7 @@ class Component extends DCLogic {
         { title: 'Company', links: [{ label: 'About', href: 'about.html' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Conferences', href: 'conferences.html' }, { label: 'Contact', href: 'contact-us.html' }] },
         { title: 'Services', links: serviceLinks },
         { title: 'Areas of Focus', links: focusAreas.map(a => ({ label: a.name, href: a.href })) },
-        { title: 'Resources', links: [{ label: 'Blog', href: 'https://www.veterinarymarketing.com/blog' }, { label: 'Free Competitive Analysis', href: 'free-veterinary-marketing-analysis.html' }] }
+        { title: 'Resources', links: [{ label: 'Blog', href: 'blog.html' }, { label: 'Free Competitive Analysis', href: 'free-veterinary-marketing-analysis.html' }] }
       ],
       reviewCountLabel: googleReviewTotal + ' reviews',
       openMenuKey: this.state.openMenu

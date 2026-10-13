@@ -464,7 +464,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
       .sp-2col { grid-template-columns: 1fr !important; gap: 36px !important; }
       .sp-2col > * { order: 0 !important; }
       .sp-grid4 { grid-template-columns: 1fr 1fr !important; }
-      .sp-focus { grid-template-columns: 1fr !important; }
+      .sp-focus { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
       .sp-cta-card { padding: 88px 40px 56px !important; }
       .sp-cta-peek { width: 160px !important; top: -80px !important; }
       .sp-sechead { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; }
@@ -485,6 +485,8 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
     }
     @media (max-width: 560px) { h1, h2, h3 { overflow-wrap: anywhere; } h2 { font-size: 30px !important; } }
   </style>
+  <link rel="stylesheet" href="assets/vm-r2.css">
+  <script src="assets/vm-r2.js" defer></script>
 </helmet>
 
 <div style="position: fixed; top: 0px; left: 0; right: 0; z-index: 100; display: flex; justify-content: center; padding: 0; transition: top 0.55s cubic-bezier(0.22, 1, 0.36, 1), padding 0.55s cubic-bezier(0.22, 1, 0.36, 1);" ref="{{ navWrapRef }}">
@@ -503,7 +505,6 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
           </sc-if>
         </div>
       </sc-for>
-      <a href="free-veterinary-marketing-analysis.html" style="{{ navFaStyle }}" style-hover="background: rgba(34,62,107,0.07);">Free Competitive Analysis</a>
       <a href="contact-us.html" style="{{ navContactStyle }}" style-hover="background: rgba(34,62,107,0.07);">Contact</a>
     </div>
     <a href="#request-info" sc-camel-on-click="{{ openReq }}" class="vm-nav-cta" style="flex: 0 0 auto; white-space: nowrap; background: #F3B23E; color: #223E6B; font-family: 'polymath-text', sans-serif; font-size: 14.5px; font-weight: 800; padding: 10px 22px; border-radius: 999px; border: 2px solid #223E6B; box-shadow: 0 3px 0 #223E6B; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;" style-hover="background: #FFBA2E; color: #223E6B; transform: translateY(-2px); box-shadow: 0 5px 0 #223E6B;">Request Info</a>
@@ -594,7 +595,6 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   <svg width="18" height="18" sc-camel-view-box="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.4-11.3-8.1l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.7-.4-3.9z"></path></svg>
   <span style="font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 800; color: #223E6B;">5.0</span>
   <span style="color: #F3B23E; font-size: 13px; letter-spacing: 2px;">★★★★★</span>
-  <span style="font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 700; color: #223E6B; border-left: 1px solid rgba(34,62,107,0.2); padding-left: 10px; margin-left: 2px; white-space: nowrap;">{{ reviewCountLabel }}</span>
 </a>
 
 <section id="top" data-screen-label="Hero" style="position: relative; overflow: hidden; background: linear-gradient(180deg, #EEF3FB 0%, #FFFFFF 100%);">
@@ -668,6 +668,14 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
             </div>
           </div>
         </sc-if>
+        <sc-if value="{{ b.hasMedia }}" hint-placeholder-val="{{ false }}">
+          <div class="{{ b.mediaClass }}" style="{{ b.mediaStyle }}">
+            <sc-if value="{{ b.mediaIsImg }}" hint-placeholder-val="{{ true }}"><img src="{{ b.mediaSrc }}" alt="{{ b.mediaAlt }}" loading="lazy"></sc-if>
+            <sc-if value="{{ b.mediaIsDevice }}" hint-placeholder-val="{{ false }}">
+              <div class="{{ b.deviceClass }}"><div class="vm-screen"><div class="vm-label"><div class="vm-play" aria-hidden="true"></div><strong>{{ b.deviceTitle }}</strong><span>{{ b.deviceNote }}</span></div></div></div>
+            </sc-if>
+          </div>
+        </sc-if>
       </div>
     </div>
   </section>
@@ -709,16 +717,14 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
       <div style="font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #2F5694; margin-bottom: 16px;">Areas of focus</div>
       <h2 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: clamp(30px, 3.2vw, 42px); line-height: 1.1; color: #223E6B; margin: 0; max-width: 560px; text-wrap: balance;">{{ focusH2 }}</h2>
     </div>
-    <a href="index.html#focus" style="font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 800; color: #2F5694; display: inline-flex; align-items: center; gap: 8px; border-bottom: 2px solid rgba(47,86,148,0.3); padding-bottom: 3px; margin-bottom: 8px; white-space: nowrap;" style-hover="color: #223E6B; border-color: #223E6B;">See all eight practice types →</a>
   </div>
-  <div class="sp-focus" style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px;">
-    <sc-for list="{{ relatedFocus }}" as="rf" hint-placeholder-count="2">
-      <a href="{{ rf.href }}" class="vm-reveal" style="display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; align-items: center; color: inherit; border: 1px solid rgba(34,62,107,0.16); border-radius: 22px; padding: 22px 26px 22px 22px; transition: border-color 0.2s, background 0.2s;" style-hover="border-color: #2F5694; background: rgba(116,155,234,0.08);">
+  <div class="sp-focus vm-focus8" style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px;">
+    <sc-for list="{{ relatedFocus }}" as="rf" hint-placeholder-count="8">
+      <a href="{{ rf.href }}" class="vm-reveal" style="display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 14px; align-items: center; color: inherit; border: 1px solid rgba(34,62,107,0.16); border-radius: 18px; padding: 14px 16px 14px 14px; transition: border-color 0.2s, background 0.2s;" style-hover="border-color: #2F5694; background: rgba(116,155,234,0.08);">
         <div style="{{ rf.imgStyle }}"></div>
         <div>
-          <h3 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 21px; color: #223E6B; margin: 0 0 8px;">{{ rf.name }}</h3>
-          <p style="font-size: 15px; line-height: 1.55; color: #333333; margin: 0 0 10px;">{{ rf.why }}</p>
-          <div style="font-family: 'polymath-text', sans-serif; font-size: 14.5px; font-weight: 700; color: #2F5694;">Read the {{ rf.short }} page →</div>
+          <h3 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 16px; line-height: 1.2; color: #223E6B; margin: 0 0 6px;">{{ rf.name }}</h3>
+          <div style="font-family: \'polymath-text\', sans-serif; font-size: 13px; font-weight: 700; color: #2F5694;">Learn more →</div>
         </div>
       </a>
     </sc-for>
@@ -733,13 +739,12 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   <div class="sp-grid4" style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px;">
     <sc-for list="{{ reasons }}" as="rs" hint-placeholder-count="4">
       <div class="vm-reveal" style="text-align: center; padding: 8px 12px;">
-        <div style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 44px; line-height: 1; color: #2F5694; margin-bottom: 14px;">{{ rs.value }}</div>
+        <div style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 44px; line-height: 1; color: #2F5694; margin-bottom: 14px;" data-count="{{ rs.countVal }}" data-from="{{ rs.from }}">{{ rs.value }}</div>
         <h3 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 19px; line-height: 1.25; color: #223E6B; margin: 0 0 8px;">{{ rs.title }}</h3>
         <p style="font-size: 15px; line-height: 1.6; color: #333333; margin: 0;">{{ rs.body }}</p>
       </div>
     </sc-for>
   </div>
-  <p class="vm-reveal" style="position: relative; text-align: center; font-size: 16px; line-height: 1.6; color: #333333; margin: 56px auto 0; max-width: 620px;">Not ready to talk yet? Start with our <a href="free-veterinary-marketing-analysis.html" style="color: #2F5694; font-weight: 700; text-decoration: underline; text-underline-offset: 3px;" style-hover="color: #223E6B;">free competitive analysis</a> and see where your practice stands against the clinics around you.</p>
 </section>
 
 <section id="book" data-screen-label="CTA" style="max-width: 1240px; margin: 0 auto; padding: 0 32px 110px; box-sizing: border-box;">
@@ -838,7 +843,6 @@ class Component extends DCLogic {
         requestAnimationFrame(tick);
       });
     }, { threshold: 0.5 });
-    document.querySelectorAll('.sp-count').forEach(el => this.countObserver.observe(el));
     this.onKey = (e) => { if (e.key === 'Escape') { if (this.state.videoEmbed) this.setState({ videoEmbed: null }); if (this.state.reqOpen) this.setState({ reqOpen: false }); } };
     window.addEventListener('keydown', this.onKey);
   }
@@ -923,11 +927,13 @@ class Component extends DCLogic {
       videoStyle: 'position: relative; border-radius: 22px; overflow: hidden; background: #EDF2FA; aspect-ratio: 4 / 3; order: 1;',
       cardStyle: 'order: 2; position: relative; z-index: 2; background: #fff; border-radius: 22px; padding: 34px 36px 38px; box-shadow: 0 24px 60px rgba(10,30,50,0.28); margin: 0 0 0 -70px;'
     }));
+    const R2_MEDIA = {"1": {"t": "img", "src": "assets/social-mkt-c772c89132.webp", "kind": "plain", "alt": "Facebook and Instagram ads for a veterinary practice"}, "2": {"t": "dev", "kind": "phone", "title": "Ad creative in feed", "note": "Screen video coming from VeterinaryMarketing.com"}};
     const blocks = P.blocks.map((b, i) => {
       const tone = b.tone || (i % 3 === 2 ? 'blue' : i % 2 === 1 ? 'tint' : 'white');
       const dark = tone === 'blue';
       const hasPanel = !!(b.bullets && b.bullets.length);
-      const flip = hasPanel && i % 2 === 1;
+      const md = R2_MEDIA[String(i)] || null; const hasMedia = !hasPanel && !!md;
+      const flip = (hasPanel || hasMedia) && i % 2 === 1;
       const bg = dark ? '#2F5694' : tone === 'tint' ? '#EEF3FB' : '#fff';
       return {
         ...b,
@@ -935,9 +941,14 @@ class Component extends DCLogic {
         paras: (b.paras || []).map(para),
         bullets: (b.bullets || []).map((s, j) => { const t = splitLead(s); return { lead: t.lead, segs: segs(t.rest), mark: b.numbered ? String(j + 1) : '✓', markStyle: { width: '30px', height: '30px', borderRadius: '50%', background: b.numbered ? '#223E6B' : '#F3B23E', color: b.numbered ? '#fff' : '#223E6B', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'polymath-text', sans-serif", fontSize: '13px', fontWeight: 800, marginTop: '1px' } }; }),
         sectionStyle: 'background: ' + bg + '; padding: 96px 0; position: relative; overflow: hidden;',
-        gridStyle: 'display: grid; grid-template-columns: ' + (hasPanel ? 'minmax(0, 1fr) minmax(0, 1fr)' : 'minmax(0, 760px)') + '; gap: 72px; align-items: center;',
+        gridStyle: 'display: grid; grid-template-columns: ' + ((hasPanel || hasMedia) ? 'minmax(0, 1fr) minmax(0, 1fr)' : 'minmax(0, 760px)') + '; gap: 72px; align-items: center;',
         textStyle: 'order: ' + (flip ? 2 : 1) + ';',
         panelStyle: 'order: ' + (flip ? 1 : 2) + '; background: ' + (dark ? '#fff' : tone === 'tint' ? '#fff' : '#EEF3FB') + '; border-radius: 22px; padding: 28px 28px 26px; box-shadow: ' + (dark ? '0 30px 70px rgba(10,30,60,0.35)' : '0 18px 40px rgba(34,62,107,0.10)') + ';',
+        hasMedia, mediaIsImg: hasMedia && md.t === 'img', mediaIsDevice: hasMedia && md.t === 'dev',
+        mediaClass: 'vm-media vm-reveal' + (hasMedia && md.t === 'img' ? ' vm-media-' + (md.kind || 'plain') : ''),
+        mediaStyle: 'order: ' + (flip ? 1 : 2) + ';',
+        mediaSrc: hasMedia && md.t === 'img' ? md.src : '', mediaAlt: hasMedia ? (md.alt || '') : '',
+        deviceClass: 'vm-dev vm-dev-' + (hasMedia && md.t === 'dev' ? md.kind : 'mac'), deviceTitle: hasMedia && md.t === 'dev' ? md.title : '', deviceNote: hasMedia && md.t === 'dev' ? md.note : '',
         tagStyle: "font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: " + (dark ? '#F3B23E' : '#2F5694') + '; margin-bottom: 16px;',
         h2Style: 'font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: clamp(30px, 3.2vw, 42px); line-height: 1.12; color: ' + (dark ? '#fff' : '#223E6B') + '; margin: 0 0 18px; text-wrap: balance;',
         pStyle: 'font-size: 17.5px; line-height: 1.65; color: ' + (dark ? 'rgba(255,255,255,0.9)' : '#333333') + '; margin: 0 0 14px; text-wrap: pretty;',
@@ -951,9 +962,9 @@ class Component extends DCLogic {
       intro: P.intro.map(para),
       blocks, videoStories,
       focusH2: P.focusH2 || 'Built for your kind of practice',
-      relatedFocus: P.focus.map(f => ({ name: f.name, why: f.why, href: focusFiles[f.name], short: focusShort[f.name], imgStyle: { width: '120px', height: '120px', borderRadius: '50%', background: '#D9E2F0 url("' + asset(focusImgs[f.name]) + '") center / cover no-repeat' } })),
+      relatedFocus: focusNames.map(n => ({ name: n, why: (P.focus.find(f => f.name === n) || {}).why || '', href: focusFiles[n], short: focusShort[n], imgStyle: { width: '72px', height: '72px', borderRadius: '50%', background: '#D9E2F0 url("' + asset(focusImgs[n]) + '") center / cover no-repeat' } })),
       whyH2: P.whyH2 || 'Why practices choose VeterinaryMarketing.com',
-      reasons: P.reasons.map((r) => ({ value: r[0], title: r[1], body: r[2] })),
+      reasons: P.reasons.map((r) => ({ value: r[0], title: r[1], body: r[2], from: r[3] || '', countVal: (r[3] !== undefined || /^[$<\s]*[\d,.]+[%+xM\s]*$/.test(r[0])) && !/^(19|20)\d\d$/.test(r[0]) ? r[0] : '' })),
       closeH2: P.closeH2, closeP: P.closeP,
       videoModalOpen: !!this.state.videoEmbed,
       videoEmbedUrl: this.state.videoEmbed || '',
@@ -964,7 +975,7 @@ class Component extends DCLogic {
         { title: 'Company', links: [{ label: 'About', href: 'about.html' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Conferences', href: 'conferences.html' }, { label: 'Contact', href: 'contact-us.html' }] },
         { title: 'Services', links: serviceLinks },
         { title: 'Areas of Focus', links: focusNames.map(n => ({ label: n, href: focusFiles[n] })) },
-        { title: 'Resources', links: [{ label: 'Blog', href: 'https://www.veterinarymarketing.com/blog' }, { label: 'Free Competitive Analysis', href: 'free-veterinary-marketing-analysis.html' }] }
+        { title: 'Resources', links: [{ label: 'Blog', href: 'blog.html' }, { label: 'Free Competitive Analysis', href: 'free-veterinary-marketing-analysis.html' }] }
       ],
       navWrapRef: this.navWrapRef, navPillRef: this.navPillRef, navLogoRef: this.navLogoRef,
       mobileOpen: this.state.mobileOpen,
@@ -972,8 +983,7 @@ class Component extends DCLogic {
       toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen, mobileSub: null })),
       closeMobile: () => this.setState({ mobileOpen: false, mobileSub: null }),
       mobileTop: [
-        { label: 'About', href: 'about.html' }, { label: 'Services', sub: 'services' }, { label: 'Areas of Focus', sub: 'focus' }, { label: 'Reviews', href: 'reviews.html' },
-        { label: 'Free Competitive Analysis', href: 'free-veterinary-marketing-analysis.html' }, { label: 'Contact', href: 'contact-us.html' }
+        { label: 'About', href: 'about.html' }, { label: 'Services', sub: 'services' }, { label: 'Areas of Focus', sub: 'focus' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Contact', href: 'contact-us.html' }
       ].map(l => { const on = isHere(l.href) || (l.sub === 'services' && serviceLinks.some(s => isHere(s.href))) || (l.sub === 'focus' && focusNames.some(nm => isHere(focusFiles[nm]))); return { ...l, isLink: !l.sub, hasSub: !!l.sub, openSub: () => this.setState({ mobileSub: l.sub }), rowStyle: 'color: #223E6B; font-weight: 700; font-size: 16px; padding: 13px 14px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; box-sizing: border-box; background: none; border: 0; font-family: inherit; text-align: left; cursor: pointer;' + (on ? ' background: rgba(34,62,107,0.07); box-shadow: inset 3px 0 0 #F3B23E;' : '') }; }),
       mobileSubTitle: this.state.mobileSub === 'focus' ? 'Areas of Focus' : 'Services',
       mobileSubLinks: this.state.mobileSub === 'focus' ? focusNames.map(n => ({ label: n, href: focusFiles[n] })) : serviceLinks,
@@ -982,7 +992,7 @@ class Component extends DCLogic {
       mobilePageStyle: 'width: 50%; flex: 0 0 50%; display: flex; flex-direction: column; gap: 2px; box-sizing: border-box; padding: 16px;',
       ...this.reqVals(), closeMenu: () => this.state.openMenu && this.setState({ openMenu: null }),
       navMenus: [
-        { key: 'about', label: 'About', href: 'about.html', items: [{ label: 'About Us', href: 'about.html' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Conferences', href: 'conferences.html' }, { label: 'Our Blog', href: 'https://www.veterinarymarketing.com/blog' }] },
+        { key: 'about', label: 'About', href: 'about.html', items: [{ label: 'About Us', href: 'about.html' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Conferences', href: 'conferences.html' }, { label: 'Our Blog', href: 'blog.html' }] },
         { key: 'services', label: 'Services', href: undefined, items: serviceLinks },
         { key: 'focus', label: 'Areas of Focus', href: undefined, items: focusNames.map(n => ({ label: n, href: focusFiles[n] })) }
       ].map(m => ({ ...m, isOpen: this.state.openMenu === m.key, open: () => this.setState({ openMenu: m.key }), parentStyle: activeParentStyle(isHere(m.href) || m.items.some(it => isHere(it.href))), items: m.items.map(it => ({ ...it, itemStyle: isHere(it.href) ? 'color: #2F5694; font-weight: 700; padding: 8px 12px; border-radius: 10px; font-size: 14px; background: rgba(47,86,148,0.08);' : 'color: #333333; font-weight: 400; padding: 8px 12px; border-radius: 10px; font-size: 14px;' })) })),
@@ -998,7 +1008,7 @@ class Component extends DCLogic {
     };
   }
 }
-const P = {"seoTitle":"Veterinary Social Media Ads | Meta Ads for Veterinary Practices | VeterinaryMarketing.com","crumb":"Social Media Ads","h1":"Veterinary social media ads that reach the right pet owners","sub":"Meta Ads on Facebook and Instagram, with every dollar tracked.","intro":["Pet owners spend hours every week on Facebook and Instagram. They aren't searching for a vet while they scroll, but they will remember the practice they keep seeing when the time comes.","That's what veterinary social media ads do. They put your practice in front of the right local pet owners, build your name in the community and bring in high-quality new client leads. With laser-targeted Meta Ads and clear reporting, you'll know exactly who you're reaching and what it's bringing back to your practice."],"heroCta":"Want your practice in front of local pet owners every day?","heroImg":"uploads/social-media.png","heroAlt":"A veterinary practice's Facebook and Instagram presence on desktop, laptop and phone","heroStat":"$20M+","heroStatLabel":"vet ad spend managed","video":"malak","blocks":[{"tag":"Precise targeting","title":"Reach exactly the pet owners you want","paras":["Social media ads for veterinarians work because of how precisely they can be targeted. We build your campaigns around the people who matter most to your practice."],"panelTitle":"Audiences we build","bullets":["Your local area. The towns, zip codes and neighborhoods you actually serve.","Pet owners. People whose interests and activity show they have dogs, cats or other pets.","Your existing clients. Re-engaging current clients is one of our top-performing tactics. It keeps you top of mind between visits and sparks social referrals.","People like your best clients. Lookalike audiences built from the clients you already have.","Website visitors. Pet owners who visited your site and didn't book see your ads again while they're still deciding, the same visitors [[direct mail for veterinarians|veterinary-direct-mail-marketing.html]] follows up with."]},{"tag":"Brand awareness","title":"Brand awareness campaigns that build your name","paras":["Most pet owners don't need a vet today. But they will, and the practice they already know and trust gets the call.","Our veterinary social media advertising includes brand awareness campaigns that introduce your practice to your community before they need you. We feature your doctors, your team, your hospital and what makes you different, with stunning design that stops the scroll. It's especially powerful when you're opening a new practice, adding a doctor or launching a new service, and it works best next to an active page kept fresh with [[veterinary social media posting|veterinary-social-media-posting.html]]."],"cta":"Want to be the first practice pet owners think of?"},{"tag":"Conversion tracking","title":"Conversion tracking that shows what's working","paras":["Likes and views are nice, but they don't pay the bills. We set up conversion tracking on every campaign, so we know which ads lead to real actions: phone calls, form submissions and appointment requests.","That data tells us which audiences, images and messages bring in new clients. We put more of your budget behind what's working and cut what isn't, so your results improve month after month."]},{"tag":"ROI tracking","title":"ROI tracking, just like our Google Ads","paras":["Your veterinary social media ads are tracked with the same Transparent ROI Tracking dashboard we use for [[veterinary Google Ads|veterinary-ppc-marketing.html]]. You'll never have to wonder if your Meta Ads are worth it. The numbers are right in front of you."],"panelTitle":"You'll see","bullets":["Every ad dollar spent. And the return it brings to your practice.","New clients tied to real revenue. Not just clicks and impressions.","Revenue you didn't capture. Missed calls and inquiries that never became appointments, so you can train your staff to capture them."],"cta":"See what your social media ads are really returning. Ask us for a walkthrough of the dashboard."}],"focusH2":"Brand awareness where it matters most","focus":[{"name":"Startup Practice Support","why":"Introduce your practice to the community before the doors open, and document the build as it happens."},{"name":"Multi-Location Practices","why":"Ads targeted to the neighborhoods around each hospital, not the whole region, so clients land at the right location."}],"reasons":[["$20M+","Veterinary ad spend managed","Veterinary only. We know what stops a pet owner's scroll."],["0%","Fee on your ad spend","Your budget goes to your ads."],["1","Dedicated account manager","Someone who knows your practice and your goals."],["Custom","Creative, every ad","Designed for your practice, with your photos, your team and your brand."]],"closeH2":"Let's launch your veterinary social media ads","closeP":"The right veterinary social media ads plan builds your brand, reaches the right pet owners and proves its return. Request more information and we'll review your current social media advertising, show you who you could be reaching and walk you through the dashboard."};
+const P = {"seoTitle":"Veterinary Social Media Ads | Meta Ads for Veterinary Practices | VeterinaryMarketing.com","crumb":"Social Media Ads","h1":"Veterinary social media ads that reach the right pet owners","sub":"Meta Ads on Facebook and Instagram, with every dollar tracked.","intro":["Pet owners spend hours every week on Facebook and Instagram. They aren't searching for a vet while they scroll, but they will remember the practice they keep seeing when the time comes.","That's what veterinary social media ads do. They put your practice in front of the right local pet owners, build your name in the community and bring in high-quality new client leads. With laser-targeted Meta Ads and clear reporting, you'll know exactly who you're reaching and what it's bringing back to your practice."],"heroCta":"Want your practice in front of local pet owners every day?","heroImg":"uploads/social-media.png","heroAlt":"A veterinary practice's Facebook and Instagram presence on desktop, laptop and phone","heroStat":"$20M+","heroStatLabel":"vet ad spend managed","video":"malak","blocks":[{"tag":"Precise targeting","title":"Reach exactly the pet owners you want","paras":["Social media ads for veterinarians work because of how precisely they can be targeted. We build your campaigns around the people who matter most to your practice."],"panelTitle":"Audiences we build","bullets":["Your local area. The towns, zip codes and neighborhoods you actually serve.","Pet owners. People whose interests and activity show they have dogs, cats or other pets.","Your existing clients. Re-engaging current clients is one of our top-performing tactics. It keeps you top of mind between visits and sparks social referrals.","People like your best clients. Lookalike audiences built from the clients you already have.","Website visitors. Pet owners who visited your site and didn't book see your ads again while they're still deciding, the same visitors [[direct mail for veterinarians|veterinary-direct-mail-marketing.html]] follows up with."]},{"tag":"Brand awareness","title":"Brand awareness campaigns that build your name","paras":["Most pet owners don't need a vet today. But they will, and the practice they already know and trust gets the call.","Our veterinary social media advertising includes brand awareness campaigns that introduce your practice to your community before they need you. We feature your doctors, your team, your hospital and what makes you different, with stunning design that stops the scroll. It's especially powerful when you're opening a new practice, adding a doctor or launching a new service, and it works best next to an active page kept fresh with [[veterinary social media posting|veterinary-social-media-posting.html]]."],"cta":"Want to be the first practice pet owners think of?"},{"tag":"Conversion tracking","title":"Conversion tracking that shows what's working","paras":["Likes and views are nice, but they don't pay the bills. We set up conversion tracking on every campaign, so we know which ads lead to real actions: phone calls, form submissions and appointment requests.","That data tells us which audiences, images and messages bring in new clients. We put more of your budget behind what's working and cut what isn't, so your results improve month after month."]},{"tag":"ROI tracking","title":"ROI tracking, just like our Google Ads","paras":["Your veterinary social media ads are tracked with the same Transparent ROI Tracking dashboard we use for [[veterinary Google Ads|veterinary-ppc-marketing.html]]. You'll never have to wonder if your Meta Ads are worth it. The numbers are right in front of you."],"panelTitle":"You'll see","bullets":["Every ad dollar spent. And the return it brings to your practice.","New clients tied to real revenue. Not just clicks and impressions.","Revenue you didn't capture. Missed calls and inquiries that never became appointments, so you can train your staff to capture them."],"cta":"See what your social media ads are really returning. Ask us for a walkthrough of the dashboard."}],"focusH2":"Brand awareness where it matters most","focus":[{"name":"Startup Practice Support","why":"Introduce your practice to the community before the doors open, and document the build as it happens."},{"name":"Multi-Location Practices","why":"Ads targeted to the neighborhoods around each hospital, not the whole region, so clients land at the right location."}],"reasons":[["$20M+","Veterinary ad spend managed","Veterinary only. We know what stops a pet owner's scroll."],["0%","Fee on your ad spend","Your budget goes to your ads."],["✓","Dedicated account manager","Someone who knows your practice and your goals."],["Custom","Creative, every ad","Designed for your practice, with your photos, your team and your brand."]],"closeH2":"Let's launch your veterinary social media ads","closeP":"The right veterinary social media ads plan builds your brand, reaches the right pet owners and proves its return. Request more information and we'll review your current social media advertising, show you who you could be reaching and walk you through the dashboard."};
 
 </script>
 
