@@ -21,7 +21,7 @@ work = pathlib.Path('/tmp/iconsrv'); work.mkdir(exist_ok=True)
 (work / 'icon.svg').write_bytes(ICON_SVG.read_bytes()); (work / 'logo.svg').write_bytes(LOGO_SVG.read_bytes())
 (work / 'icon.html').write_text('<html><body style="margin:0;background:transparent"><div style="width:512px;height:512px;display:flex;align-items:center;justify-content:center"><img src="icon.svg" style="height:440px"></div></body></html>')
 (work / 'tile.html').write_text('<html><body style="margin:0"><div style="width:512px;height:512px;background:#2F5694;border-radius:112px;display:flex;align-items:center;justify-content:center"><img src="icon.svg" style="height:360px;filter:brightness(0) invert(1)"></div></body></html>')
-(work / 'og.html').write_text('''<html><body style="margin:0"><div style="width:1200px;height:630px;background:#2F5694;position:relative;font-family:-apple-system,Helvetica,Arial,sans-serif;overflow:hidden">
+(work / 'og.html').write_text('''<html><head><meta charset="utf-8"></head><body style="margin:0"><div style="width:1200px;height:630px;background:#2F5694;position:relative;font-family:-apple-system,Helvetica,Arial,sans-serif;overflow:hidden">
 <div style="position:absolute;right:-120px;top:-90px;width:560px;height:560px;border-radius:50%;background:rgba(116,155,234,0.25)"></div>
 <div style="position:absolute;left:80px;top:84px;background:#fff;border-radius:28px;padding:28px 36px;display:inline-flex"><img src="logo.svg" style="height:84px"></div>
 <div style="position:absolute;left:80px;top:268px;color:#fff;font-size:64px;font-weight:800;line-height:1.05;letter-spacing:-0.02em;max-width:900px">More of the clients<br>your practice wants.</div>
