@@ -7,7 +7,7 @@
 }
 @media (max-width: 560px) {
   .vm-svc8 { grid-template-columns: 1fr !important; }
-  .vm-focus8 { grid-template-columns: 1fr !important; }
+  /* .vm-focus8 stays 2-up on phones (see per-page r4 rules) */
 }
 
 /* Service-page media slot (zig-zag sections) */

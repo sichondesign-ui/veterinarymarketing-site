@@ -496,6 +496,24 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
     @media (max-width: 720px) { .ct-form { grid-template-columns: 1fr !important; } }
     @media (max-width: 560px) { .ct-form-card { padding: 26px 22px 24px !important; } .ct-dog { max-width: 150px !important; } }
   </style>
+  <style data-vm-r4-css>
+    @media (max-width: 760px) {
+      /* (10) Request Info becomes a full-screen sheet */
+      [role="dialog"][aria-label="Request information"] { padding: 0 !important; align-items: stretch !important; background: #fff !important; }
+      [role="dialog"][aria-label="Request information"] > div { width: 100% !important; min-height: 100dvh; border-radius: 0 !important; border: 0 !important; box-shadow: none !important; padding: 72px 22px 40px !important; }
+      [role="dialog"][aria-label="Request information"] > div > button[aria-label="Close"] { position: fixed !important; top: 14px !important; right: 14px !important; z-index: 2; }
+      /* (7) stats strip reads as four quadrants */
+      .fp-stats > div:nth-child(n+3), .sp-stats > div:nth-child(n+3) { border-top: 1px solid #D9E2F0; }
+      .fp-stats > div:nth-child(2n), .sp-stats > div:nth-child(2n) { border-right: 0 !important; }
+    }
+    @media (max-width: 560px) {
+      /* (8) practice-type cards stay 2-up, stacked, equal height */
+      .vm-focus8 { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+      .vm-focus8 > a { grid-template-columns: 1fr !important; gap: 10px !important; text-align: center; align-content: start; padding: 16px 12px 14px !important; }
+      .vm-focus8 > a > div:first-child { margin: 0 auto; }
+      .vm-focus8 h3 { font-size: 15px !important; }
+    }
+  </style>
   <link rel="stylesheet" href="assets/vm-r2.css">
   <script src="assets/vm-r2.js" defer></script>
 </helmet>
@@ -536,6 +554,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
           <sc-if value="{{ ml.hasSub }}" hint-placeholder-val="{{ false }}"><button type="button" sc-camel-on-click="{{ ml.openSub }}" aria-label="{{ ml.label }} menu" style="{{ ml.rowStyle }}" style-hover="background: rgba(47,86,148,0.07);"><span>{{ ml.label }}</span><svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="#2F5694" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button></sc-if>
         </sc-for>
         <a href="#request-info" sc-camel-on-click="{{ openReq }}" style="display: block; margin-top: 10px; text-align: center; background: #F3B23E; color: #223E6B; font-weight: 800; font-size: 15px; padding: 13px 22px; border-radius: 999px; border: 2px solid #223E6B; box-shadow: 0 3px 0 #223E6B;">Request Info</a>
+        <a href="tel:+18448440338" class="vm-mob-call" style="display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 12px; padding: 12px 14px; border-radius: 12px; border: 1.5px solid rgba(34,62,107,0.18); color: #223E6B; font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 800; text-decoration: none;"><span style="width: 32px; height: 32px; border-radius: 50%; background: #F3B23E; border: 2px solid #223E6B; display: inline-flex; align-items: center; justify-content: center; color: #223E6B;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"></path></svg></span>Call (844) 844-0338</a>
       </div>
       <div style="{{ mobilePageStyle }}">
         <button type="button" sc-camel-on-click="{{ mobileBack }}" style="color: #223E6B; font-weight: 700; font-size: 16px; padding: 13px 14px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; box-sizing: border-box; background: none; border: 0; font-family: inherit; text-align: left; cursor: pointer; justify-content: flex-start; gap: 8px; color: #2F5694; font-size: 14.5px; padding: 10px 10px 12px;" style-hover="background: rgba(47,86,148,0.07);"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="#223E6B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg><span>Back</span></button>
@@ -783,10 +802,10 @@ class Component extends DCLogic {
       toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen, mobileSub: null })),
       closeMobile: () => this.setState({ mobileOpen: false, mobileSub: null }),
       mobileTop: [
-        { label: 'About', href: 'about.html' }, { label: 'Services', sub: 'services' }, { label: 'Areas of Focus', sub: 'focus' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Contact', href: 'contact-us.html' }
-      ].map(l => { const on = isHere(l.href) || (l.sub === 'services' && serviceLinks.some(s => isHere(s.href))) || (l.sub === 'focus' && focusNames.some(nm => isHere(focusFiles[nm]))); return { ...l, isLink: !l.sub, hasSub: !!l.sub, openSub: () => this.setState({ mobileSub: l.sub }), rowStyle: 'color: #223E6B; font-weight: 700; font-size: 16px; padding: 13px 14px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; box-sizing: border-box; background: none; border: 0; font-family: inherit; text-align: left; cursor: pointer;' + (on ? ' background: rgba(34,62,107,0.07); box-shadow: inset 3px 0 0 #F3B23E;' : '') }; }),
-      mobileSubTitle: this.state.mobileSub === 'focus' ? 'Areas of Focus' : 'Services',
-      mobileSubLinks: this.state.mobileSub === 'focus' ? focusNames.map(n => ({ label: n, href: focusFiles[n] })) : serviceLinks,
+        { label: 'About', sub: 'about' }, { label: 'Services', sub: 'services' }, { label: 'Areas of Focus', sub: 'focus' }, { label: 'Contact', href: 'contact-us.html' }
+      ].map(l => { const on = isHere(l.href) || (l.sub === 'about' && [{ label: 'About Us', href: 'about.html' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Conferences', href: 'conferences.html' }, { label: 'Our Blog', href: 'blog.html' }].some(a => isHere(a.href))) || (l.sub === 'services' && serviceLinks.some(s => isHere(s.href))) || (l.sub === 'focus' && focusNames.some(nm => isHere(focusFiles[nm]))); return { ...l, isLink: !l.sub, hasSub: !!l.sub, openSub: () => this.setState({ mobileSub: l.sub }), rowStyle: 'color: #223E6B; font-weight: 700; font-size: 16px; padding: 13px 14px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; box-sizing: border-box; background: none; border: 0; font-family: inherit; text-align: left; cursor: pointer;' + (on ? ' background: rgba(34,62,107,0.07); box-shadow: inset 3px 0 0 #F3B23E;' : '') }; }),
+      mobileSubTitle: this.state.mobileSub === 'about' ? 'About' : this.state.mobileSub === 'focus' ? 'Areas of Focus' : 'Services',
+      mobileSubLinks: this.state.mobileSub === 'about' ? [{ label: 'About Us', href: 'about.html' }, { label: 'Reviews', href: 'reviews.html' }, { label: 'Conferences', href: 'conferences.html' }, { label: 'Our Blog', href: 'blog.html' }] : this.state.mobileSub === 'focus' ? focusNames.map(n => ({ label: n, href: focusFiles[n] })) : serviceLinks,
       mobileBack: () => this.setState({ mobileSub: null }),
       mobileTrackStyle: 'display: flex; width: 200%; transform: translateX(' + (this.state.mobileSub ? '-50%' : '0') + '); transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);',
       mobilePageStyle: 'width: 50%; flex: 0 0 50%; display: flex; flex-direction: column; gap: 2px; box-sizing: border-box; padding: 16px;',

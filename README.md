@@ -88,6 +88,13 @@ Still needed before launch, each requires something from John or the build platf
 - Rendering: pages are client-rendered by the Claude Design runtime; the raw HTML a crawler receives is a template. Fine for a preview; the production site should be the Webflow build (or a static render).
 
 ## Changelog
+### 2026-10-14 – build 8 (responsive audit)
+- Mobile menu: About is now a sub-panel (About Us, Reviews, Conferences, Our Blog) like Services and Areas of Focus; tap-to-call row under Request Info.
+- Request Info modal becomes a full-screen sheet under 760px.
+- Homepage: Google Reviews and "Small budgets" blocks regain side padding on phones; hero CTAs sit side by side on phones with the second button shortened to "Free Analysis" (desktop unchanged); stray paw clipped in the team block.
+- About: hero photo capped at 76% width on phones.
+- Service + focus pages: stats strip shows a horizontal divider between rows (four quadrants) on phones; practice-type grid stays 2-up with equal-height stacked cards.
+- Reviews: new hero with a photo in a blob mask and the 5.0 rating card floating over it, replacing the detached rating card.
 ### 2026-10-14 – build 7d
 - Static `<title>` (and OG/Twitter titles) corrected on 18 pages that still read "Bundled Page". SEO audit tooling added (`tools/seo_audit.py`, `tools/seo_targets.json`).
 ### 2026-10-13 – build 7c
