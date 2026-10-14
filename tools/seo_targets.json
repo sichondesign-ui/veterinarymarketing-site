@@ -1,0 +1,21 @@
+{
+  "_source": "Target keywords from John's copy docs (Services 10/07, Areas of Focus 09/27, Conferences 10/07). Focus-page keywords inferred from their SEO titles where the doc gave none. Edit here; seo_audit.py reads this file.",
+  "veterinary-websites.html": {"keyword": "veterinary websites", "variants": ["veterinary website"]},
+  "veterinary-seo-marketing.html": {"keyword": "veterinary SEO"},
+  "veterinary-aeo.html": {"keyword": "veterinary AEO", "variants": ["answer engine optimization for veterinarians", "AI search for veterinary practices", "AEO"]},
+  "veterinary-ppc-marketing.html": {"keyword": "veterinary Google Ads", "variants": ["Google Ads for veterinary", "veterinary PPC"]},
+  "veterinary-chatgpt-ads.html": {"keyword": "ChatGPT Ads for veterinarians", "variants": ["veterinary ChatGPT Ads", "ChatGPT advertising for veterinary practices", "ChatGPT Ads"]},
+  "veterinary-social-media-marketing.html": {"keyword": "veterinary social media ads", "variants": ["veterinary social media advertising", "social media ads for veterinarians", "social media ads"]},
+  "veterinary-social-media-posting.html": {"keyword": "veterinary social media posting", "variants": ["social media posting for veterinarians", "veterinary social media management", "social media posting"]},
+  "veterinary-direct-mail-marketing.html": {"keyword": "veterinary direct mail", "variants": ["veterinary direct mail marketing", "direct mail for veterinarians", "direct mail"]},
+  "small-animal-practice-veterinary-marketing.html": {"keyword": "small animal veterinary marketing", "variants": ["small animal practice"]},
+  "veterinary-specialty-practice-marketing.html": {"keyword": "veterinary specialist marketing", "variants": ["specialty veterinary marketing", "specialty practice"]},
+  "emergency-vet-practice-marketing.html": {"keyword": "emergency veterinary marketing", "variants": ["emergency vet marketing", "emergency hospital"]},
+  "urgent-care-animal-practice-veterinary-marketing.html": {"keyword": "urgent care veterinary marketing", "variants": ["veterinary urgent care"]},
+  "startup-practice-veterinary-marketing.html": {"keyword": "startup veterinary marketing", "variants": ["startup practice", "startup veterinary practice"]},
+  "mobile-practice-veterinary-marketing-strategies.html": {"keyword": "mobile veterinary marketing", "variants": ["mobile veterinary practice", "mobile clinic"]},
+  "multi-location-practice-veterinary-marketing-strategies.html": {"keyword": "multi-location veterinary marketing", "variants": ["multi-location", "multi location"]},
+  "equine-veterinary-marketing.html": {"keyword": "equine marketing", "variants": ["equine veterinary marketing", "equine practice"]},
+  "conferences.html": {"keyword": "veterinary marketing speaker", "variants": ["veterinary conference speaker", "veterinary marketing presentations"]},
+  "index.html": {"keyword": "veterinary marketing", "variants": ["marketing for veterinary practices", "veterinary marketing agency"]}
+}

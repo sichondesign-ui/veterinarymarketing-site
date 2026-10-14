@@ -67,6 +67,13 @@ File names are flat so the folder works from any host path; focus pages use the 
 - Confirm founding year: the About page history photo carries a "2019 · veterinary only, ever since" badge that isn't in the copy doc.
 - Reviews page shows every written Google review (7 truncated in the export link out to Google) plus 11 videos. Review counts are no longer shown anywhere, so nothing to hand-update.
 
+## SEO workflow
+`python3 tools/seo_audit.py . --render` after any content change. It reads the target keyword per page from `tools/seo_targets.json`
+(taken from John's copy docs) and checks title/description presence and length, one H1, keyword in title / H1 / description / first
+150 words, canonical, OG tags, image alt coverage, thin pages and inbound links. Report lands in `tools/seo_report.md`.
+First run (10/14) caught 20 pages whose static `<title>` was still the bundler's "Bundled Page" — browsers never showed it (the
+runtime sets the real title with JS) but crawlers and link previews would have. Fixed.
+
 ## Launch checklist (not live yet; queued)
 Done in this build: favicon set (`favicon.ico`, `favicon.svg`, apple-touch, manifest icons), Open Graph + Twitter cards with a default share image (`assets/og-default.jpg`), canonical URLs pointing at the final veterinarymarketing.com paths, `lang="en"`, theme-color, `robots.txt`, `sitemap.xml`, branded `404.html`.
 
@@ -81,6 +88,8 @@ Still needed before launch, each requires something from John or the build platf
 - Rendering: pages are client-rendered by the Claude Design runtime; the raw HTML a crawler receives is a template. Fine for a preview; the production site should be the Webflow build (or a static render).
 
 ## Changelog
+### 2026-10-14 – build 7d
+- Static `<title>` (and OG/Twitter titles) corrected on 18 pages that still read "Bundled Page". SEO audit tooling added (`tools/seo_audit.py`, `tools/seo_targets.json`).
 ### 2026-10-13 – build 7c
 - Homepage hero: new two-dog image (John, 10/13) replaces the dog-and-cat.
 ### 2026-10-13 – build 7b (launch prep)
