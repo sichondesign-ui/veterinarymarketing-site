@@ -1026,6 +1026,8 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   <sc-if value="{{ reqOpen }}" hint-placeholder-val="{{ false }}">
     <div sc-camel-on-click="{{ closeReq }}" role="dialog" aria-modal="true" aria-label="Request information" style="position: fixed; inset: 0; z-index: 9100; background: rgba(14,25,42,0.78); display: flex; align-items: flex-start; justify-content: center; padding: 6vh 20px 40px; overflow-y: auto; box-sizing: border-box;">
       <div sc-camel-on-click="{{ stopEvt }}" style="position: relative; width: min(560px, 100%); background: #fff; border: 2px solid #223E6B; border-radius: 28px; box-shadow: 0 8px 0 #223E6B; padding: 36px 36px 32px; box-sizing: border-box;">
+        <img class="vm-req-dog vm-req-dog-l" src="assets/dog-frank-e21c1a9aab.png" alt="" aria-hidden="true">
+        <img class="vm-req-dog vm-req-dog-r" src="assets/dog-floyd-9224c77315.webp" alt="" aria-hidden="true">
         <button sc-camel-on-click="{{ closeReq }}" aria-label="Close" style="position: absolute; top: 14px; right: 14px; width: 38px; height: 38px; border-radius: 50%; border: 2px solid #223E6B; background: #fff; color: #223E6B; font-size: 16px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center;">✕</button>
         <div style="font-family: 'polymath-text', sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #2F5694; margin-bottom: 10px;">Request Information</div>
         <sc-if value="{{ reqDone }}" hint-placeholder-val="{{ false }}">
@@ -1048,7 +1050,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
             </sc-if>
             <sc-if value="{{ reqStep2 }}" hint-placeholder-val="{{ false }}">
               <label style="display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; min-width: 0; font-family: 'polymath-text', sans-serif; font-size: 13.5px; font-weight: 700; color: #223E6B;">What’s your practice name?<input name="practice_name" type="text" required="required" style="font-family: 'polymath-text', sans-serif; font-size: 15px; color: #333333; background: #F4F7FC; border: 1.5px solid rgba(34,62,107,0.22); border-radius: 12px; padding: 12px 14px; width: 100%; box-sizing: border-box; outline: none;"></label>
-              <label style="display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; min-width: 0; font-family: 'polymath-text', sans-serif; font-size: 13.5px; font-weight: 700; color: #223E6B;">What’s your practice website?<input name="practice_website" type="url" style="font-family: 'polymath-text', sans-serif; font-size: 15px; color: #333333; background: #F4F7FC; border: 1.5px solid rgba(34,62,107,0.22); border-radius: 12px; padding: 12px 14px; width: 100%; box-sizing: border-box; outline: none;"></label>
+              <label style="display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; min-width: 0; font-family: 'polymath-text', sans-serif; font-size: 13.5px; font-weight: 700; color: #223E6B;">What’s your practice website?<input name="practice_website" type="text" inputmode="url" autocomplete="url" placeholder="yourpractice.com" style="font-family: 'polymath-text', sans-serif; font-size: 15px; color: #333333; background: #F4F7FC; border: 1.5px solid rgba(34,62,107,0.22); border-radius: 12px; padding: 12px 14px; width: 100%; box-sizing: border-box; outline: none;"></label>
             </sc-if>
             <sc-if value="{{ reqStep3 }}" hint-placeholder-val="{{ false }}">
               <label style="display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; min-width: 0; font-family: 'polymath-text', sans-serif; font-size: 13.5px; font-weight: 700; color: #223E6B;">What’s your name?<input name="name" type="text" required="required" style="font-family: 'polymath-text', sans-serif; font-size: 15px; color: #333333; background: #F4F7FC; border: 1.5px solid rgba(34,62,107,0.22); border-radius: 12px; padding: 12px 14px; width: 100%; box-sizing: border-box; outline: none;"></label>
@@ -1210,7 +1212,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   <div class="vm-grid3" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px;">
     <sc-for list="{{ services }}" as="svc" hint-placeholder-count="6">
       <a href="{{ svc.href }}" style="display: flex; flex-direction: column; color: inherit; border: 1px solid rgba(34,62,107,0.16); border-radius: 22px; padding: 38px 36px 40px; transition: border-color 0.2s, background 0.2s;" style-hover="border-color: #2F5694; background: rgba(116,155,234,0.08);">
-        <div style="height: 220px; margin-bottom: 24px;">
+        <div class="vm-svc-art" style="height: 272px; margin: 0 -16px 22px;">
           <div role="img" aria-label="{{ svc.name }} example" style="{{ svc.imgStyle }}"></div>
         </div>
         <h3 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 23px; color: #223E6B; margin: 0 0 10px;">{{ svc.name }}</h3>
@@ -1573,11 +1575,11 @@ class Component extends DCLogic {
       services: [
         { name: 'Veterinary Websites', img: asset('uploads/websites.png'), href: 'veterinary-websites.html', blurb: 'Custom sites built around SEO, AEO and user experience. No templates, your brand front and center, live in under 25 days.' },
         { name: 'Veterinary SEO', img: asset('uploads/SEO.png'), href: 'veterinary-seo-marketing.html', blurb: 'Rank every page of your site for the local searches pet owners actually make, like "vet near me." No keyword cramming, real organic growth.' },
-        { name: 'Veterinary AEO', img: asset('assets/placeholder-aeo.png'), href: 'veterinary-aeo.html', blurb: 'Answer Engine Optimization: get your practice recommended by ChatGPT, Google AI Overviews and other AI tools when local pet owners ask for a vet.' },
+        { name: 'Veterinary AEO', img: 'assets/aeo-logos-1014-0344884970.webp', href: 'veterinary-aeo.html', blurb: 'Answer Engine Optimization: get your practice recommended by ChatGPT, Google AI Overviews and other AI tools when local pet owners ask for a vet.' },
         { name: 'Google Ads / PPC', img: asset('uploads/googleadwords.png'), href: 'veterinary-ppc-marketing.html', blurb: 'Dedicated campaigns with a lower cost per click, and a dashboard that shows every ad dollar, its exact return and the revenue you missed.' },
-        { name: 'ChatGPT Ads', img: asset('assets/placeholder-chatgpt-ads.png'), href: 'veterinary-chatgpt-ads.html', blurb: 'Reach local pet owners while they ask AI for help. Target by zip code, track ROI and be the first practice in your market to do it.' },
+        { name: 'ChatGPT Ads', img: 'assets/chatgpt-card-1014-e4ddd330d5.webp', href: 'veterinary-chatgpt-ads.html', blurb: 'Reach local pet owners while they ask AI for help. Target by zip code, track ROI and be the first practice in your market to do it.' },
         { name: 'Social Media Ads', img: asset('uploads/social-media.png'), href: 'veterinary-social-media-marketing.html', blurb: 'Meta Ads on Facebook and Instagram with precise local targeting, brand awareness campaigns and every dollar tracked.' },
-        { name: 'Social Media Posting', img: asset('assets/placeholder-social-posting.png'), href: 'veterinary-social-media-posting.html', blurb: 'Custom content every week, made for your practice. No cookie-cutter posts. Build your brand and earn trust in your community.' },
+        { name: 'Social Media Posting', img: 'assets/posting-devices-1014-06e7925f23.webp', href: 'veterinary-social-media-posting.html', blurb: 'Custom content every week, made for your practice. No cookie-cutter posts. Build your brand and earn trust in your community.' },
         { name: 'Direct Mail', img: asset('uploads/directmail.png'), href: 'veterinary-direct-mail-marketing.html', blurb: 'Custom-designed postcards sent to website visitors who did not book, within 3 days of their visit, tracked in the same dashboard.' }
       ].map((s) => ({ ...s, imgStyle: { width: '100%', height: '100%', backgroundImage: `url("${asset(s.img)}")`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', filter: 'drop-shadow(0 14px 22px rgba(34,62,107,0.22))' } })),
       videoStories: [

@@ -60,9 +60,9 @@ File names are flat so the folder works from any host path; focus pages use the 
 ## Open items for John
 - Screen videos for the MacBook / iMac / iPhone frames on the service pages (Websites ×2, Google Ads, AEO, Social Media Ads, Social Media Posting). Labeled device placeholders are in place.
 - Social Media Ads page has no graphics yet; device placeholders only.
-- Request Info modal: the image you referenced in the review was not in the content folder. Send it and it goes in the modal's intro panel.
+- Request Info modal now has Frank and Floyd flanking the card on desktop (same pair as the live site's form). Say if you meant a different image.
 - Blog page shows 16 demo posts for layout review only. The live blog loads from the CMS.
-- Artwork for the Veterinary AEO, ChatGPT Ads and Social Media Posting service cards now uses the 10/13 graphics.
+- Veterinary AEO, ChatGPT Ads and Social Media Posting: homepage cards and service-page heroes now use the 10/14 graphics. The AEO devices file came as an SVG wrapping a PNG (no vector data), so it was converted like the others.
 - A larger headshot of John is now on the Conferences page (1000px).
 - Confirm founding year: the About page history photo carries a "2019 · veterinary only, ever since" badge that isn't in the copy doc.
 - Reviews page shows every written Google review (7 truncated in the export link out to Google) plus 11 videos. Review counts are no longer shown anywhere, so nothing to hand-update.
@@ -84,10 +84,19 @@ Still needed before launch, each requires something from John or the build platf
 - Fonts: Typekit files are self-hosted here (52 files), which Adobe's license does not permit in production. Use the Adobe Fonts kit for the domain.
 - Analytics / tracking: GA4 or GTM, HubSpot tracking code, Meta pixel. None present.
 - Redirects: old nested URLs (`/services/...`, `/areas-of-focus/...`, `/case-studies`, `/services/veterinary-copy-writing`) to the final structure.
-- Content: 6 device-frame video placeholders, Social Media Ads graphics, Request Info modal image, 16 demo blog posts, "2019" badge on About, legal-entity naming on the Privacy page (APV Marketing LLC / support@apvetmarketing.com).
+- Content: 6 device-frame video placeholders, Social Media Ads graphics, 16 demo blog posts, "2019" badge on About, legal-entity naming on the Privacy page (APV Marketing LLC / support@apvetmarketing.com).
 - Rendering: pages are client-rendered by the Claude Design runtime; the raw HTML a crawler receives is a template. Fine for a preview; the production site should be the Webflow build (or a static render).
 
 ## Changelog
+### 2026-10-15 – build 9 (client edit request 10/14)
+Applied by `tools/r5_client_1014.py`; new graphics in `assets/*-1014-*.webp`.
+- Homepage: AEO, ChatGPT Ads and Social Media Posting cards show the 10/14 graphics (AI-tools logos, ChatGPT ad card, posts-on-devices). Card art box 220 → 272px and bleeds into the card padding so the artwork reads; back to 200px on phones.
+- Service pages: hero graphics on AEO (devices / AI Overview), ChatGPT Ads (ad card) and Social Media Posting (monthly results). Hero media column is wider on desktop (≥961px) on all 8 service pages. The transparent canvases were trimmed before conversion, which is most of the "enlarge" (the AI-tools logos occupied 30% of their 3200×2000 canvas).
+- Service pages: duplicate artwork removed where the new hero reused a graphic already in the zig-zag (AEO block 4, Posting block 3 are text-only again). AEO block 1 and Posting block 1 use the trimmed 10/14 versions of the same artwork.
+- Response time counter: every page now counts down 24 → "< 2 hrs". The 8 service pages were counting up 0 → 2 (no start value); focus pages and the Posting page counted down from 48.
+- Conferences: the wide bottom collage tile anchors its crop near the top so heads aren't cut at desktop width.
+- Blog: category chips under the headline, the per-post category label and the oversized featured post are gone; posts are one uniform list.
+- Request Info modal: the practice-website field was `type="url"`, so a bare "mypractice.com" failed browser validation and silently blocked Next. That is why step 3 was unreachable. Now plain text with URL keyboard. Frank and Floyd flank the card at ≥1040px.
 ### 2026-10-14 – build 8 (responsive audit)
 - Mobile menu: About is now a sub-panel (About Us, Reviews, Conferences, Our Blog) like Services and Areas of Focus; tap-to-call row under Request Info.
 - Request Info modal becomes a full-screen sheet under 760px.

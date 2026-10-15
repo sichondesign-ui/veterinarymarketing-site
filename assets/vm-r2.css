@@ -80,3 +80,19 @@
 @media (max-width: 760px) { .vm-collage { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 180px 180px; } .vm-collage > div:first-child { grid-row: 1 / 2; grid-column: 1 / 3; } .vm-collage > div:nth-child(4) { grid-column: 1 / 3; } }
 
 @media (prefers-reduced-motion: reduce) { .vm-blog-dot { animation: none; } }
+
+/* ---- r5 (10/14 client edits) ---- */
+/* Conferences collage: wide bottom tile cropped heads off at desktop width; anchor the crop near the top */
+.vm-collage > div:nth-child(4) img { object-position: center 18%; }
+/* Service hero: larger media column on desktop so the graphics are legible */
+@media (min-width: 961px) {
+  .sp-hero:has(.sp-hero-media) { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr) !important; gap: 40px !important; }
+  .sp-hero-media { margin: 0 -48px 0 -8px; }
+}
+/* Request Info modal: Frank and Floyd flank the card (hidden on narrow screens; the modal is a full sheet there) */
+.vm-req-dog { display: none; position: absolute; bottom: -2px; width: 200px; height: auto; pointer-events: none; }
+.vm-req-dog-l { right: 100%; margin-right: 22px; }
+.vm-req-dog-r { left: 100%; margin-left: 22px; }
+@media (min-width: 1040px) { .vm-req-dog { display: block; } }
+/* Homepage service cards: art box margin collapses back on phones */
+@media (max-width: 560px) { .vm-svc-art { height: 200px !important; margin: 0 0 18px !important; } }
