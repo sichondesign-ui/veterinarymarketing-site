@@ -83,7 +83,8 @@
 
 /* ---- r5 (10/14 client edits) ---- */
 /* Conferences collage: wide bottom tile cropped heads off at desktop width; anchor the crop near the top */
-.vm-collage > div:nth-child(4) img { object-position: center 18%; }
+.vm-collage > div:nth-child(4) img { object-position: center 20%; }
+@media (min-width: 761px) { .vm-collage { grid-template-rows: 250px 250px; } }
 /* Service hero: larger media column on desktop so the graphics are legible */
 @media (min-width: 961px) {
   .sp-hero:has(.sp-hero-media) { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr) !important; gap: 40px !important; }
