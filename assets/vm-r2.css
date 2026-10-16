@@ -89,7 +89,7 @@
 @media (min-width: 961px) {
   .sp-hero:has(.sp-hero-media) { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr) !important; gap: 40px !important; align-items: start !important; }
   /* media column = a panel as tall as the copy column; artwork centered inside it, so wide and square graphics balance the same */
-  .sp-hero-media { margin: 10px -48px 0 -8px; align-self: stretch; align-items: center !important; padding: 40px 36px; box-sizing: border-box; overflow: hidden;
+  .sp-hero-media { margin: 10px 0 0 -8px; align-self: stretch; align-items: center !important; padding: 40px 32px; box-sizing: border-box; overflow: hidden;
     background: url("paw-white-843d13d573.svg") no-repeat right -60px bottom -50px / 300px auto, linear-gradient(160deg, #E7EEFA 0%, #DCE6F6 100%); border-radius: 32px; }
   .sp-hero-media > * { position: relative; }
   /* the hero's scattered light-blue paws are retired on service pages; the panel carries one white paw instead */
