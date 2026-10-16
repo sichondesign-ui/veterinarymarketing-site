@@ -90,8 +90,11 @@
   .sp-hero:has(.sp-hero-media) { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr) !important; gap: 40px !important; align-items: start !important; }
   /* media column = a panel as tall as the copy column; artwork centered inside it, so wide and square graphics balance the same */
   .sp-hero-media { margin: 10px 0 0 -8px; align-self: stretch; align-items: center !important; padding: 40px 32px; box-sizing: border-box; overflow: hidden;
-    background: url("paw-white-843d13d573.svg") no-repeat right -60px bottom -50px / 300px auto, linear-gradient(160deg, #E7EEFA 0%, #DCE6F6 100%); border-radius: 32px; }
-  .sp-hero-media > * { position: relative; }
+    background: linear-gradient(180deg, #DCE6F6 0%, #E7EEFA 55%, #FFFFFF 100%); border-radius: 32px; }
+  /* paw tucked behind the lower edge of the artwork, tracking the artwork rather than the panel */
+  .sp-hero-pic::before { content: ""; position: absolute; z-index: 0; right: 6%; bottom: -120px; width: 300px; height: 262px; background: url("paw-white-843d13d573.svg") no-repeat center / contain; pointer-events: none; }
+  .sp-hero-pic > img, .sp-hero-badge { position: relative; z-index: 1; }
+  .sp-hero-badge { position: absolute !important; }
   /* the hero's scattered light-blue paws are retired on service pages; the panel carries one white paw instead */
   #top:has(.sp-hero-media) > div[aria-hidden="true"]:first-child { display: none; }
   .sp-hero-pic img { max-height: 520px !important; }
