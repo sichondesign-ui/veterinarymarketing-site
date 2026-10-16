@@ -103,10 +103,12 @@
 .vm-platforms-white img { height: 18px; opacity: 0.9; }
 .vm-platforms-white img[alt="Google Ads"] { height: 23px; }
 .vm-platforms-hero { justify-content: center; margin-top: 26px; }
-.sp-hero-ctas .vm-platforms, .fp-hero-ctas .vm-platforms { margin-top: 6px; padding-top: 18px; border-top: 1px solid rgba(34,62,107,0.14); gap: 10px 16px; flex-wrap: nowrap; }
-.sp-hero-ctas .vm-platforms img, .fp-hero-ctas .vm-platforms img { height: 19px; }
-.sp-hero-ctas .vm-platforms img[alt="Google Ads"], .fp-hero-ctas .vm-platforms img[alt="Google Ads"] { height: 24px; }
-@media (max-width: 960px) { .sp-hero-ctas .vm-platforms, .fp-hero-ctas .vm-platforms { justify-content: center; flex-wrap: wrap; } }
+/* Service / focus pages: one centered row between the hero and the stats strip */
+.vm-platforms-strip { max-width: 1140px; margin: -28px auto 0; padding: 0 32px 40px; box-sizing: border-box; }
+.vm-platforms-center { justify-content: center; gap: 14px 44px; }
+.vm-platforms-center img { height: 24px; }
+.vm-platforms-center img[alt="Google Ads"] { height: 30px; }
+@media (max-width: 960px) { .vm-platforms-strip { margin-top: 0; padding-bottom: 32px; } .vm-platforms-center { gap: 12px 28px; } }
 @media (max-width: 560px) { .vm-platforms img { height: 18px; } .vm-platforms img[alt="Google Ads"] { height: 23px; } .vm-platforms { gap: 10px 14px; } }
 /* Request Info modal: header band with the dog inside the card */
 .vm-req-head { position: relative; display: flex; align-items: flex-end; min-height: 168px; margin: -36px -36px 24px; padding: 28px 196px 22px 36px; box-sizing: border-box; background: linear-gradient(180deg, #EEF3FB 0%, #E4EBF8 100%); border-radius: 26px 26px 0 0; }

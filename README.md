@@ -92,7 +92,7 @@ Still needed before launch, each requires something from John or the build platf
 Applied by `tools/r6_client_1015.py`; logos and dog in `assets/logo-*.webp`, `assets/req-dog-*.webp`.
 - Footer (every page): new tagline copy from John's doc; Meta / Google Ads / ChatGPT Ads / Bing Ads logos in white under it.
 - Homepage hero: the same four logos (blue) centered under the two buttons.
-- All 8 service pages and 8 Areas-of-Focus pages: logos (blue) under "Or call us directly", separated by a hairline.
+- All 8 service pages and 8 Areas-of-Focus pages: logos (blue) in one centered row between the hero and the stats strip (John asked for "under call us directly"; inside the copy column the four logos wrapped, so the row sits directly below the hero instead).
 - Request Info modal: Frank and Floyd removed. The merle dog (John's `4.3perro-merle.svg`, a PNG wrapped in SVG) sits inside the card in a light header band with the eyebrow and title. `4.2 - dog.svg` was a 194px thumbnail with a paw baked into its background, so it was not used.
 - Collage headroom tweak from 10/15 and the stylesheet cache-buster (`?v=10`) ride along.
 ### 2026-10-15 – build 9 (client edit request 10/14)
