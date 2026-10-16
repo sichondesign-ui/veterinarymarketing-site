@@ -60,7 +60,7 @@ File names are flat so the folder works from any host path; focus pages use the 
 ## Open items for John
 - Screen videos for the MacBook / iMac / iPhone frames on the service pages (Websites ×2, Google Ads, AEO, Social Media Ads, Social Media Posting). Labeled device placeholders are in place.
 - Social Media Ads page has no graphics yet; device placeholders only.
-- Request Info modal now has Frank and Floyd flanking the card on desktop (same pair as the live site's form). Say if you meant a different image.
+- Request Info modal: merle dog inside the card header (10/15 request).
 - Blog page shows 16 demo posts for layout review only. The live blog loads from the CMS.
 - Veterinary AEO, ChatGPT Ads and Social Media Posting: homepage cards and service-page heroes now use the 10/14 graphics. The AEO devices file came as an SVG wrapping a PNG (no vector data), so it was converted like the others.
 - A larger headshot of John is now on the Conferences page (1000px).
@@ -88,6 +88,13 @@ Still needed before launch, each requires something from John or the build platf
 - Rendering: pages are client-rendered by the Claude Design runtime; the raw HTML a crawler receives is a template. Fine for a preview; the production site should be the Webflow build (or a static render).
 
 ## Changelog
+### 2026-10-16 – build 10 (client edit request 10/15)
+Applied by `tools/r6_client_1015.py`; logos and dog in `assets/logo-*.webp`, `assets/req-dog-*.webp`.
+- Footer (every page): new tagline copy from John's doc; Meta / Google Ads / ChatGPT Ads / Bing Ads logos in white under it.
+- Homepage hero: the same four logos (blue) centered under the two buttons.
+- All 8 service pages and 8 Areas-of-Focus pages: logos (blue) under "Or call us directly", separated by a hairline.
+- Request Info modal: Frank and Floyd removed. The merle dog (John's `4.3perro-merle.svg`, a PNG wrapped in SVG) sits inside the card in a light header band with the eyebrow and title. `4.2 - dog.svg` was a 194px thumbnail with a paw baked into its background, so it was not used.
+- Collage headroom tweak from 10/15 and the stylesheet cache-buster (`?v=10`) ride along.
 ### 2026-10-15 – build 9 (client edit request 10/14)
 Applied by `tools/r5_client_1014.py`; new graphics in `assets/*-1014-*.webp`.
 - Homepage: AEO, ChatGPT Ads and Social Media Posting cards show the 10/14 graphics (AI-tools logos, ChatGPT ad card, posts-on-devices). Card art box 220 → 272px and bleeds into the card padding so the artwork reads; back to 200px on phones.

@@ -90,10 +90,25 @@
   .sp-hero:has(.sp-hero-media) { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr) !important; gap: 40px !important; }
   .sp-hero-media { margin: 0 -48px 0 -8px; }
 }
-/* Request Info modal: Frank and Floyd flank the card (hidden on narrow screens; the modal is a full sheet there) */
-.vm-req-dog { display: none; position: absolute; bottom: -2px; width: 200px; height: auto; pointer-events: none; }
-.vm-req-dog-l { right: 100%; margin-right: 22px; }
-.vm-req-dog-r { left: 100%; margin-left: 22px; }
-@media (min-width: 1040px) { .vm-req-dog { display: block; } }
 /* Homepage service cards: art box margin collapses back on phones */
 @media (max-width: 560px) { .vm-svc-art { height: 200px !important; margin: 0 0 18px !important; } }
+
+/* ---- r6 (10/15 client edits) ---- */
+/* Platform logos: Meta, Google Ads, ChatGPT Ads, Bing Ads */
+.vm-platforms { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.vm-platforms img { height: 24px; width: auto; display: block; }
+.vm-platforms-blue img { opacity: 0.82; }
+.vm-platforms-white img { height: 20px; opacity: 0.9; }
+.vm-platforms-white { gap: 10px 18px; max-width: 320px; margin-bottom: 22px; }
+.vm-platforms-hero { justify-content: center; margin-top: 26px; }
+.sp-hero-ctas .vm-platforms, .fp-hero-ctas .vm-platforms { margin-top: 6px; padding-top: 18px; border-top: 1px solid rgba(34,62,107,0.14); }
+@media (max-width: 960px) { .sp-hero-ctas .vm-platforms, .fp-hero-ctas .vm-platforms { justify-content: center; } }
+@media (max-width: 560px) { .vm-platforms img { height: 20px; } .vm-platforms { gap: 10px 16px; } }
+/* Request Info modal: header band with the dog inside the card */
+.vm-req-head { position: relative; display: flex; align-items: flex-end; min-height: 168px; margin: -36px -36px 24px; padding: 28px 196px 22px 36px; box-sizing: border-box; background: linear-gradient(180deg, #EEF3FB 0%, #E4EBF8 100%); border-radius: 26px 26px 0 0; }
+.vm-req-head-copy { position: relative; z-index: 1; min-width: 0; }
+.vm-req-pup { position: absolute; right: 34px; bottom: 0; height: calc(100% - 10px); max-height: 190px; width: auto; pointer-events: none; }
+@media (max-width: 760px) {
+  .vm-req-head { margin: -72px -22px 20px; padding: 72px 128px 18px 22px; border-radius: 0; min-height: 0; }
+  .vm-req-pup { right: 10px; height: 118px; max-height: 118px; }
+}
