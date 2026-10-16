@@ -95,7 +95,8 @@ Applied by `tools/r6_client_1015.py`; logos and dog in `assets/logo-*.webp`, `as
 - All 8 service pages and 8 Areas-of-Focus pages: logos (blue) under "Or call us directly", separated by a hairline.
 - Request Info modal: Frank and Floyd removed. The merle dog (John's `4.3perro-merle.svg`, a PNG wrapped in SVG) sits inside the card in a light header band with the eyebrow and title. `4.2 - dog.svg` was a 194px thumbnail with a paw baked into its background, so it was not used.
 - Service heroes: the stat card now sits on the top-right corner of the artwork (Sichon, 10/16). The hero is a real `<img>` instead of a background box so the card tracks the image edge; the five older hero PNGs were trimmed of baked-in transparent margins (`assets/*-hero-*.webp`). Focus pages unchanged.
-- Collage headroom tweak from 10/15 and the stylesheet cache-buster (`?v=10d`) ride along.
+- Service heroes: columns top-aligned and the media column is a soft blue panel as tall as the copy, with the artwork centered inside (Sichon, 10/16). Fixes the balance problem where a wide postcard or a square screenshot floated small beside a four-line headline. CSS only; no copy touched. Focus pages unchanged.
+- Collage headroom tweak from 10/15 and the stylesheet cache-buster (`?v=11`) ride along.
 ### 2026-10-15 – build 9 (client edit request 10/14)
 Applied by `tools/r5_client_1014.py`; new graphics in `assets/*-1014-*.webp`.
 - Homepage: AEO, ChatGPT Ads and Social Media Posting cards show the 10/14 graphics (AI-tools logos, ChatGPT ad card, posts-on-devices). Card art box 220 → 272px and bleeds into the card padding so the artwork reads; back to 200px on phones.

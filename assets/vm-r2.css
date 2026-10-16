@@ -87,8 +87,10 @@
 @media (min-width: 761px) { .vm-collage { grid-template-rows: 250px 250px; } }
 /* Service hero: larger media column on desktop so the graphics are legible */
 @media (min-width: 961px) {
-  .sp-hero:has(.sp-hero-media) { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr) !important; gap: 40px !important; }
-  .sp-hero-media { margin: 0 -48px 0 -8px; }
+  .sp-hero:has(.sp-hero-media) { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr) !important; gap: 40px !important; align-items: start !important; }
+  /* media column = a panel as tall as the copy column; artwork centered inside it, so wide and square graphics balance the same */
+  .sp-hero-media { margin: 10px -48px 0 -8px; align-self: stretch; align-items: center !important; padding: 40px 36px; box-sizing: border-box; background: linear-gradient(160deg, #E7EEFA 0%, #DCE6F6 100%); border-radius: 32px; }
+  .sp-hero-pic img { max-height: 520px !important; }
 }
 /* Homepage service cards: art box margin collapses back on phones */
 @media (max-width: 560px) { .vm-svc-art { height: 200px !important; margin: 0 0 18px !important; } }
