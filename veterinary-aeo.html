@@ -524,7 +524,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
       .vm-focus8 h3 { font-size: 15px !important; }
     }
   </style>
-  <link rel="stylesheet" href="assets/vm-r2.css?v=10b">
+  <link rel="stylesheet" href="assets/vm-r2.css?v=10d">
   <script src="assets/vm-r2.js?v=10" defer></script>
 </helmet>
 
@@ -661,13 +661,13 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
         <div class="vm-platforms vm-platforms-blue" aria-label="Advertising platforms we work in"><img src="assets/logo-meta-02a0dd8f58.webp" alt="Meta" loading="lazy"><img src="assets/logo-google-ads-697b20a889.webp" alt="Google Ads" loading="lazy"><img src="assets/logo-chatgpt-ads-4ee1d9259d.webp" alt="ChatGPT Ads" loading="lazy"><img src="assets/logo-bing-ads-6c0493613d.webp" alt="Bing Ads" loading="lazy"></div>
       </div>
     </div>
-    <div class="vm-reveal sp-hero-media" style="position: relative;">
-      <div style="position: relative; padding-top: 80%;">
-        <div role="img" aria-label="{{ heroAlt }}" style="{{ heroImgStyle }}"></div>
-      </div>
-      <div style="position: absolute; left: -18px; bottom: 12px; background: #fff; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; border-radius: 18px; padding: 14px 18px; display: flex; flex-direction: column; gap: 2px;">
+    <div class="vm-reveal sp-hero-media" style="position: relative; display: flex; justify-content: center;">
+      <div class="sp-hero-pic" style="position: relative; display: inline-block; max-width: 100%;">
+        <img src="{{ heroImgSrc }}" alt="{{ heroAlt }}" style="display: block; max-width: 100%; max-height: 540px; width: auto; height: auto; filter: drop-shadow(0 30px 40px rgba(34,62,107,0.22));">
+      <div class="sp-hero-badge" style="position: absolute; right: -18px; top: -16px; background: #fff; border: 2px solid #223E6B; box-shadow: 0 4px 0 #223E6B; border-radius: 18px; padding: 14px 18px; display: flex; flex-direction: column; gap: 2px;">
         <div style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: 26px; line-height: 1; color: #2F5694;">{{ heroStat }}</div>
         <div style="font-size: 12.5px; font-weight: 700; color: #223E6B; letter-spacing: 0.04em;">{{ heroStatLabel }}</div>
+      </div>
       </div>
     </div>
   </div>
@@ -1005,7 +1005,7 @@ class Component extends DCLogic {
       };
     });
     return {
-      crumb: P.crumb, h1: P.h1, sub: P.sub, heroCta: P.heroCta, heroImgStyle: { position: 'absolute', inset: 0, width: '100%', height: '100%', background: 'url("' + asset(P.heroImg) + '") center / contain no-repeat', filter: 'drop-shadow(0 30px 40px rgba(34,62,107,0.22))' }, heroAlt: P.heroAlt, heroStat: P.heroStat, heroStatLabel: P.heroStatLabel,
+      crumb: P.crumb, h1: P.h1, sub: P.sub, heroCta: P.heroCta, heroImgSrc: asset(P.heroImg), heroAlt: P.heroAlt, heroStat: P.heroStat, heroStatLabel: P.heroStatLabel,
       intro: P.intro.map(para),
       blocks, videoStories,
       focusH2: P.focusH2 || 'Built for your kind of practice',
