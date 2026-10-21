@@ -394,6 +394,12 @@ c += '''
 .meetings-iframe-container { width: 100%; height: auto !important; overflow: visible; }
 .meetings-iframe-container iframe { width: 100% !important; border: 0; display: block; border-radius: 18px; }
 @media (max-width: 767px) { .meetings-iframe-container { min-height: 600px; overflow: auto; -webkit-overflow-scrolling: touch; } .meetings-iframe-container iframe { min-height: 600px; } }
+/* iMac frame: the chin was a thick bottom border, which drew diagonal seams at the corners; it is now its own block under the bezel */
+.vm-dev-imac { display: flex; flex-direction: column; }
+.vm-dev-imac .vm-screen { border: 12px solid #1E2630 !important; border-radius: 16px 16px 0 0 !important; box-shadow: none !important; }
+.vm-dev-imac::before { content: ''; order: 2; display: block; height: 54px; background: linear-gradient(#F4F6FA, #DCE2EB); border-radius: 0 0 16px 16px; box-shadow: 0 30px 60px rgba(10,30,60,0.28); }
+.vm-dev-imac::after { order: 3; }
+@media (max-width: 760px) { .vm-dev-imac::before { height: 34px; } .vm-dev-imac::after { height: 46px; } }
 .vm-sample { color: #B3541E; letter-spacing: 0; text-transform: none; font-weight: 700; }
 '''
 css.write_text(c)
@@ -402,6 +408,6 @@ print('vm-r2.css: r7 block')
 # ------------------------------------------------------------------ 9. cache-bust
 n = 0
 for p in sorted(ROOT.glob('*.html')):
-    t = p.read_text(); t2 = re.sub(r'(vm-r2\.(?:css|js))\?v=\d+', r'\1?v=13', t)
+    t = p.read_text(); t2 = re.sub(r'(vm-r2\.(?:css|js))\?v=\d+', r'\1?v=14', t)
     if t2 != t: p.write_text(t2); n += 1
-print(f'{n} pages cache-busted to v=13')
+print(f'{n} pages cache-busted to v=14')
