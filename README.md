@@ -12,7 +12,7 @@ Static preview build of the new veterinarymarketing.com. Plain HTML pages with s
 Testimonial videos (YouTube / Vimeo) play in the on-page lightbox once hosted over https. They will not play when a
 file is double-clicked from disk; that is a YouTube rule for `file://` pages, not a bug.
 
-## Pages (22)
+## Pages (24)
 | Page | File | Final URL |
 | --- | --- | --- |
 | Homepage | `index.html` | `/` |
@@ -37,13 +37,19 @@ file is double-clicked from disk; that is a YouTube rule for `file://` pages, no
 | Focus: Mobile Clinics | `mobile-practice-veterinary-marketing-strategies.html` | `/areas-of-focus/mobile-practice-veterinary-marketing-strategies` |
 | Focus: Multi-Location Practices | `multi-location-practice-veterinary-marketing-strategies.html` | `/areas-of-focus/multi-location-practice-veterinary-marketing-strategies` |
 | Focus: Equine Practices | `equine-veterinary-marketing.html` | `/areas-of-focus/equine-veterinary-marketing` |
+| Thank You (form redirect, noindex) | `thank-you.html` | `/thank-you` |
+| Blog article layout (CMS template) | `blog-post.html` | `/blog/<slug>` |
 
 File names are flat so the folder works from any host path; focus pages use the slugs John confirmed on 10/07.
 
 ## Forms and embeds (production to-dos)
 - **Request Info** (header, footer and in-copy buttons) opens an on-page modal with the same 9 questions as the live
-  HubSpot form, in 3 steps. For production, post to HubSpot (Forms API or embed) from inside this modal; no separate page.
-- **Contact Us** form uses the same 9 fields in a single card. Wire to the same HubSpot form.
+  HubSpot form, in 3 steps. On submit it redirects to `thank-you.html` (build 11). For production, post to HubSpot
+  (Forms API or embed) from inside this modal, then redirect.
+- **Contact Us** form uses the same 9 fields in a single card. Same HubSpot form; same redirect to `thank-you.html`.
+- **Thank-you page** carries John's HubSpot Meetings embed (`meetings.hubspot.com/john-donato`). The embed script is
+  loaded by a small loader at the end of the page once the runtime has rendered the container; keep that if the page is
+  re-templated. Page is `noindex` on purpose.
 - **Free Competitive Analysis** CTAs go to the analysis tool: `https://wizard.veterinarymarketing.com/your-veterinary-practice`.
   The analysis page's form hands off to the same URL.
 - **Conferences speaking request** is a demo form; John will supply a HubSpot form.
@@ -61,7 +67,8 @@ File names are flat so the folder works from any host path; focus pages use the 
 - Screen videos for the MacBook / iMac / iPhone frames on the service pages (Websites ×2, Google Ads, AEO, Social Media Ads, Social Media Posting). Labeled device placeholders are in place.
 - Social Media Ads page has no graphics yet; device placeholders only.
 - Request Info modal: merle dog inside the card header (10/15 request).
-- Blog page shows 16 demo posts for layout review only. The live blog loads from the CMS.
+- Blog: 16 sample posts for layout review, labeled as such on the page. Cards open `blog-post.html`, the article layout
+  the dev binds to the CMS (Bill 10/21: John is choosing a headless CMS, likely Sanity). No CMS in this build.
 - Veterinary AEO, ChatGPT Ads and Social Media Posting: homepage cards and service-page heroes now use the 10/14 graphics. The AEO devices file came as an SVG wrapping a PNG (no vector data), so it was converted like the others.
 - A larger headshot of John is now on the Conferences page (1000px).
 - Confirm founding year: the About page history photo carries a "2019 · veterinary only, ever since" badge that isn't in the copy doc.
@@ -79,15 +86,29 @@ Done in this build: favicon set (`favicon.ico`, `favicon.svg`, apple-touch, mani
 
 **Preview guard — remove at launch:** every page carries `<meta name="robots" content="noindex, nofollow">` and `robots.txt` is `Disallow: /` so the GitHub preview is never indexed. Both are marked `PREVIEW ONLY` in the files.
 
+**Dev handoff (Bill 10/21: John's developer takes this live in November).** Everything below is theirs to execute; nothing here is pending on design.
+
 Still needed before launch, each requires something from John or the build platform:
 - Forms: Request Info modal, Contact form and Conference booking only flip a "thanks" state. They need HubSpot embeds / endpoints; the SMS opt-in must map to the field his texting vendor reads.
 - Fonts: Typekit files are self-hosted here (52 files), which Adobe's license does not permit in production. Use the Adobe Fonts kit for the domain.
 - Analytics / tracking: GA4 or GTM, HubSpot tracking code, Meta pixel. None present.
 - Redirects: old nested URLs (`/services/...`, `/areas-of-focus/...`, `/case-studies`, `/services/veterinary-copy-writing`) to the final structure.
-- Content: 6 device-frame video placeholders, Social Media Ads graphics, 16 demo blog posts, "2019" badge on About, legal-entity naming on the Privacy page (APV Marketing LLC / support@apvetmarketing.com).
+- Content: 6 device-frame video placeholders, Social Media Ads graphics, 16 sample blog posts + article template to bind to the CMS, "2019" badge on About, legal-entity naming on the Privacy page (APV Marketing LLC / support@apvetmarketing.com).
+- Copyright reads © 2027 at John's request (10/21) so it does not need touching after launch.
 - Rendering: pages are client-rendered by the Claude Design runtime; the raw HTML a crawler receives is a template. Fine for a preview; the production site should be the Webflow build (or a static render).
 
 ## Changelog
+### 2026-10-21 – build 11 (client edit request 10/17, answers 10/21)
+Applied by `tools/r7_client_1017.py`; assets in `tools/r7_assets.json` (`assets/mailer-*`, `assets/badge-*`, `assets/logo-anim-w-*`).
+- Header (every page): **Client Results** → `reviews.html` between Areas of Focus and Contact, desktop and mobile menu. The About pill no longer lights up on the Reviews page.
+- Footer (every page): animated white logo (the live site's 3.3 MB blue GIF, recolored white and re-encoded to a 270 KB animated WebP, 50 frames); Google Partner / Microsoft Advertising Partner / Meta Business Partner badges replace the four platform logos (footer only, per Bill); "Privacy & Terms of Use"; © 2027; mascot aligned under the copyright on phones.
+- Request Info modal and Contact form redirect to the new `thank-you.html` (HubSpot Meetings embed from John, "what happens next" strip).
+- `blog-post.html`: article layout for the CMS hookup (hero, 780px measure, pull quote, list, CTA card, sticky sidebar). Blog cards link to it; sample posts labeled.
+- About: "Why us" stats panel right under the hero (2019 / < 2 hrs / < 6 hrs / 5.0★, the company-wide set from the focus pages, not the ChatGPT-specific one). Core Values moved to just above "Interested in joining our team?". Hero photo full width on phones.
+- Direct mail: Bill's 10/19 "vet mailer" replaces the old postcard on the homepage card, the 8 focus-page service grids and the Direct Mail page (hero + sample).
+- Phones, service + focus heroes: breadcrumb shows the page tag only (desktop keeps "Services /"), one short line (service pages: first intro sentence; focus pages: Bill's 10/21 one-liners), then CTA, call, logos on one row, image. Desktop copy untouched.
+- Phones, John's list: homepage credibility logos on one line; focus pages' gap between "Read all our Google reviews" and Why Us cut ~70%; Why Us headline breaks after "Veterinary" instead of mid-word (soft hyphen); service pages' run-in to the Testimonial band tightened; mobile menu no longer reserves the sub-panel's height under the Call row; Request Info sheet keeps Next / Submit above Safari and in-app browser toolbars (safe-area padding).
+- Cache-buster `?v=12`.
 ### 2026-10-16 – build 10 (client edit request 10/15)
 Applied by `tools/r6_client_1015.py`; logos and dog in `assets/logo-*.webp`, `assets/req-dog-*.webp`.
 - Footer (every page): new tagline copy from John's doc; Meta / Google Ads / ChatGPT Ads / Bing Ads logos in white under it.

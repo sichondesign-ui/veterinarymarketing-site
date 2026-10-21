@@ -128,3 +128,56 @@
 
 /* Service hero: stat card pinned to the top-right corner of the artwork itself */
 @media (max-width: 960px) { .sp-hero-pic { max-width: 84%; } .sp-hero-badge { right: -8px !important; top: -10px !important; } }
+
+/* ---- r7 (10/17 client edits, build 11) ---- */
+/* Footer: partner badges + animated logo + bottom row */
+.vm-badges { display: flex; align-items: center; gap: 18px; margin-bottom: 22px; }
+.vm-badges img { height: 54px; width: auto; display: block; }
+.vm-badges img[alt="Meta Business Partner"] { height: 40px; }
+.vm-foot-logo { object-fit: contain; object-position: left center; }
+@media (max-width: 760px) {
+  .vm-foot-bottom { flex-direction: column; align-items: flex-start !important; gap: 18px !important; }
+  .vm-foot-bottom img { height: 44px !important; }
+  .vm-badges { gap: 14px; }
+  .vm-badges img { height: 46px; }
+  .vm-badges img[alt="Meta Business Partner"] { height: 34px; }
+}
+/* Homepage hero: credibility logos stay on one line on phones */
+@media (max-width: 560px) {
+  .vm-platforms-hero { flex-wrap: nowrap !important; justify-content: center; gap: 0 12px !important; }
+  .vm-platforms-hero img { height: 15px !important; }
+  .vm-platforms-hero img[alt="Google Ads"] { height: 19px !important; }
+}
+@media (max-width: 380px) { .vm-platforms-hero img { height: 13px !important; } .vm-platforms-hero img[alt="Google Ads"] { height: 17px !important; } .vm-platforms-hero { gap: 0 9px !important; } }
+/* Service + focus heroes on phones: tag only, one short line, then CTA / call / logos / image */
+.vm-hero-short { display: none; }
+@media (max-width: 760px) {
+  .vm-crumb > a, .vm-crumb > a + span { display: none; }
+  .vm-hero-sub, .vm-hero-intro ~ .vm-hero-intro, .vm-hero-lead, .vm-hero-long { display: none !important; }
+  .vm-hero-short { display: block; }
+  .vm-hero-intro, .vm-hero-short { font-size: 17px !important; margin-bottom: 22px !important; }
+  .sp-hero-ctas .vm-platforms, .fp-hero-ctas .vm-platforms { flex-wrap: nowrap !important; gap: 0 12px !important; justify-content: center; }
+  .sp-hero-ctas .vm-platforms img, .fp-hero-ctas .vm-platforms img { height: 16px !important; }
+  .sp-hero-ctas .vm-platforms img[alt="Google Ads"], .fp-hero-ctas .vm-platforms img[alt="Google Ads"] { height: 20px !important; }
+  /* (J1) focus pages: gap between "Read all our Google reviews" and Why Us cut by ~70% */
+  #reviews.fp-section { padding-bottom: 20px !important; }
+  #reviews.fp-section > .vm-reveal:last-child { margin-top: 24px !important; }
+  #why.fp-section { padding-top: 28px !important; }
+  /* Why Us headline: break after "Veterinary", never mid-word */
+  #why h2 { overflow-wrap: normal !important; word-break: normal !important; hyphens: manual; }
+  /* (J3) service pages: tighter run-in to the Testimonial band */
+  #story { padding-top: 64px !important; padding-bottom: 64px !important; }
+  /* (J4/6) About: hero photo fills the column, Why Us sits right under it */
+  #top .sp-hero { padding-bottom: 40px !important; }
+  #why.sp-section { padding-top: 24px !important; }
+  /* Request Info sheet: keep the Next / Submit row clear of Safari and in-app browser toolbars */
+  [role="dialog"][aria-label="Request information"] > div { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important; }
+}
+/* Thank-you + article pages */
+@media (max-width: 900px) { .vm-thanks { grid-template-columns: 1fr !important; gap: 36px !important; } .vm-article { grid-template-columns: 1fr !important; } .vm-article-side { position: static !important; } .vm-next3 { grid-template-columns: 1fr !important; } }
+/* HubSpot Meetings embed (John's code, 10/21) */
+.meetings-wrap { height: auto !important; min-height: 0 !important; padding-bottom: 0 !important; margin-bottom: 0 !important; }
+.meetings-iframe-container { width: 100%; height: auto !important; overflow: visible; }
+.meetings-iframe-container iframe { width: 100% !important; border: 0; display: block; border-radius: 18px; }
+@media (max-width: 767px) { .meetings-iframe-container { min-height: 600px; overflow: auto; -webkit-overflow-scrolling: touch; } .meetings-iframe-container iframe { min-height: 600px; } }
+.vm-sample { color: #B3541E; letter-spacing: 0; text-transform: none; font-weight: 700; }
