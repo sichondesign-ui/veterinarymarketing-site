@@ -343,18 +343,18 @@ assert '---- r7' not in c
 c += '''
 /* ---- r7 (10/17 client edits, build 11) ---- */
 /* Footer: partner badges + animated logo + bottom row */
-.vm-badges { display: flex; align-items: center; gap: 20px; margin-bottom: 22px; }
-.vm-badges img { height: 36px; width: auto; display: block; }
-.vm-badges img[alt="Microsoft Advertising Partner"] { height: 40px; }
-.vm-badges img[alt="Meta Business Partner"] { height: 38px; }
+.vm-badges { display: flex; align-items: center; gap: 22px; margin-bottom: 22px; }
+.vm-badges img { height: 46px; width: auto; display: block; }
+.vm-badges img[alt="Microsoft Advertising Partner"] { height: 50px; }
+.vm-badges img[alt="Meta Business Partner"] { height: 36px; }
 .vm-foot-logo { object-fit: contain; object-position: left center; }
 @media (max-width: 760px) {
   .vm-foot-bottom { flex-direction: column; align-items: flex-start !important; gap: 18px !important; }
   .vm-foot-bottom img { height: 44px !important; }
   .vm-badges { gap: 16px; }
-  .vm-badges img { height: 32px; }
-  .vm-badges img[alt="Microsoft Advertising Partner"] { height: 36px; }
-  .vm-badges img[alt="Meta Business Partner"] { height: 34px; }
+  .vm-badges img { height: 40px; }
+  .vm-badges img[alt="Microsoft Advertising Partner"] { height: 44px; }
+  .vm-badges img[alt="Meta Business Partner"] { height: 32px; }
 }
 /* Homepage hero: credibility logos stay on one line on phones */
 @media (max-width: 560px) {
@@ -408,6 +408,6 @@ print('vm-r2.css: r7 block')
 # ------------------------------------------------------------------ 9. cache-bust
 n = 0
 for p in sorted(ROOT.glob('*.html')):
-    t = p.read_text(); t2 = re.sub(r'(vm-r2\.(?:css|js))\?v=\d+', r'\1?v=14', t)
+    t = p.read_text(); t2 = re.sub(r'(vm-r2\.(?:css|js))\?v=\d+', r'\1?v=15', t)
     if t2 != t: p.write_text(t2); n += 1
-print(f'{n} pages cache-busted to v=14')
+print(f'{n} pages cache-busted to v=15')
