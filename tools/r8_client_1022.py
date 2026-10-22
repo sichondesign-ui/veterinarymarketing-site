@@ -82,7 +82,8 @@ c += '''
 .vm-cal-card { max-width: 100%; overflow: hidden; }
 .meetings-iframe-container, .meetings-iframe-container iframe { max-width: 100% !important; }
 @media (max-width: 900px) { .vm-thanks { grid-template-columns: minmax(0, 1fr) !important; } .vm-cal-card { margin: 0 auto; width: 100%; } .vm-reviews3 { grid-template-columns: 1fr !important; } }
-@media (max-width: 480px) { .vm-cal-card { padding: 20px 10px 14px !important; margin: 0 -18px !important; width: auto !important; border-radius: 22px !important; } .vm-cal-card > div, .vm-cal-card h2 { padding-left: 10px; padding-right: 10px; } }
+/* Phones: HubSpot forces its iframe to 312px, so the calendar goes full-bleed (top/bottom rule, no side border) and the widget is centered */
+@media (max-width: 600px) { .vm-cal-card { margin: 0 -32px !important; width: auto !important; max-width: none !important; border-left: 0 !important; border-right: 0 !important; border-radius: 0 !important; box-shadow: none !important; padding: 22px 0 18px !important; background: #F4F7FC !important; } .vm-cal-card > div:first-child, .vm-cal-card h2 { padding-left: 32px; padding-right: 32px; } .vm-cal-slot, .meetings-wrap, .meetings-iframe-container { display: flex; justify-content: center; } .meetings-iframe-container iframe { max-width: 100% !important; } }
 /* Paw-print cursor trail (desktop pointers only) */
 .vm-paw-trail { position: fixed; left: 0; top: 0; width: 30px; height: 27px; pointer-events: none; z-index: 9998; background: #749BEA; -webkit-mask: url("paw-fill-1e3d9826c2.svg") no-repeat center / contain; mask: url("paw-fill-1e3d9826c2.svg") no-repeat center / contain; opacity: 0; animation: vmPawFade 1.8s ease-out forwards; }
 @keyframes vmPawFade { 0% { opacity: 0; transform: translate(-50%, -50%) rotate(var(--r)) scale(0.6); } 12% { opacity: 0.75; transform: translate(-50%, -50%) rotate(var(--r)) scale(1); } 100% { opacity: 0; transform: translate(-50%, -50%) rotate(var(--r)) scale(1); } }
