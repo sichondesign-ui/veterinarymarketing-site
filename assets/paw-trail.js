@@ -8,7 +8,9 @@
   var STEP_PX = 90;      // distance between prints
   var GAIT_PX = 14;      // left/right offset
   var WOBBLE_DEG = 8;    // random rotation jitter
-  var LIFE_MS = 1400;    // fade duration (keep in sync with CSS)
+  var LIFE_MS = 1800;    // fade duration
+  var SIZE_PX = 32;      // print width (height follows the glyph's 16:14 ratio)
+  var OPACITY = 0.7;     // starting opacity; spec's 0.35 was too faint to notice on 2x displays
   var POOL = 24;         // max live prints
   var MIN_VW = 1024;     // disable below this width
 
@@ -23,9 +25,9 @@
 
     var style = document.createElement('style');
     style.textContent =
-      '@keyframes vmPawFade{from{opacity:.35;transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}to{opacity:0;transform:translate(-50%,-50%) rotate(var(--r)) scale(.85)}}' +
+      '@keyframes vmPawFade{from{opacity:' + OPACITY + ';transform:translate(-50%,-50%) rotate(var(--r)) scale(1)}to{opacity:0;transform:translate(-50%,-50%) rotate(var(--r)) scale(.85)}}' +
       '.vm-paw-layer{position:fixed;inset:0;pointer-events:none;z-index:9000;overflow:hidden}' +
-      '.vm-paw{position:absolute;width:22px;height:20px;-webkit-mask:url(' + PAW_SVG + ') center/contain no-repeat;mask:url(' + PAW_SVG + ') center/contain no-repeat;will-change:transform,opacity;visibility:hidden}' +
+      '.vm-paw{position:absolute;width:' + SIZE_PX + 'px;height:' + Math.round(SIZE_PX * 14 / 16) + 'px;-webkit-mask:url(' + PAW_SVG + ') center/contain no-repeat;mask:url(' + PAW_SVG + ') center/contain no-repeat;will-change:transform,opacity;visibility:hidden}' +
       '.vm-paw.is-live{visibility:visible;animation:vmPawFade ' + LIFE_MS + 'ms ease-out forwards}';
     document.head.appendChild(style);
 
