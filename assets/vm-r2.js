@@ -126,3 +126,29 @@
     if (++tries < 100) setTimeout(wait, 100);
   })();
 })();
+
+/* ---- r8: paw-print cursor trail + Testimonial band blend ---- */
+(function vmPawTrail() {
+  if (!window.matchMedia || !matchMedia('(pointer: fine)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var last = null, side = 1, live = 0;
+  document.addEventListener('mousemove', function (e) {
+    if (last && Math.hypot(e.clientX - last.x, e.clientY - last.y) < 46) return;
+    var ang = last ? Math.atan2(e.clientY - last.y, e.clientX - last.x) : -Math.PI / 2;
+    last = { x: e.clientX, y: e.clientY };
+    if (live > 14) return;
+    side = -side;
+    var ox = Math.cos(ang + Math.PI / 2) * 9 * side, oy = Math.sin(ang + Math.PI / 2) * 9 * side;
+    var p = document.createElement('span'); p.className = 'vm-paw-trail'; p.setAttribute('aria-hidden', 'true');
+    p.style.left = (e.clientX + ox) + 'px'; p.style.top = (e.clientY + oy) + 'px';
+    p.style.setProperty('--r', (ang * 180 / Math.PI + 90) + 'deg');
+    document.body.appendChild(p); live++;
+    p.addEventListener('animationend', function () { p.remove(); live--; });
+  }, { passive: true });
+})();
+(function vmStoryBlend() {
+  var st = document.getElementById('story'); if (!st) return;
+  var prev = st.previousElementSibling; if (!prev) return;
+  var a = getComputedStyle(prev).backgroundColor, b = getComputedStyle(st).backgroundColor;
+  if (a === b) st.classList.add('vm-after-same');
+  else if (a && a !== 'rgba(0, 0, 0, 0)' && b && b !== 'rgba(0, 0, 0, 0)') st.style.backgroundImage = 'linear-gradient(180deg, ' + a + ' 0, ' + b + ' 120px)';
+})();

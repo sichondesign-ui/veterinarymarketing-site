@@ -512,8 +512,8 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
       .vm-focus8 h3 { font-size: 15px !important; }
     }
   </style>
-  <link rel="stylesheet" href="assets/vm-r2.css?v=15e">
-  <script src="assets/vm-r2.js?v=15" defer></script>
+  <link rel="stylesheet" href="assets/vm-r2.css?v=16e">
+  <script src="assets/vm-r2.js?v=16" defer></script>
 </helmet>
 
 <div style="position: fixed; top: 0px; left: 0; right: 0; z-index: 100; display: flex; justify-content: center; padding: 0; transition: top 0.55s cubic-bezier(0.22, 1, 0.36, 1), padding 0.55s cubic-bezier(0.22, 1, 0.36, 1);" ref="{{ navWrapRef }}">
@@ -632,7 +632,7 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
 </a>
 
 
-<section id="top" data-screen-label="Thank you" style="max-width: 1140px; margin: 0 auto; padding: 150px 32px 40px; box-sizing: border-box; position: relative;">
+<section id="top" data-screen-label="Thank you" style="max-width: 1140px; margin: 0 auto; padding: 150px 32px 40px; box-sizing: border-box; position: relative; overflow: hidden;">
   <div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; overflow: hidden;"><sc-for list="{{ pawsHero }}" as="bp" hint-placeholder-count="0"><span style="{{ bp.style }}"></span></sc-for></div>
   <div class="vm-thanks" style="position: relative; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 56px; align-items: start;">
     <div>
@@ -659,7 +659,35 @@ font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
   </div>
 </section>
 
-<section id="next" data-screen-label="What happens next" style="max-width: 1140px; margin: 0 auto; padding: 24px 32px 120px; box-sizing: border-box;">
+<section id="reviews" data-screen-label="Google reviews" style="max-width: 1140px; margin: 0 auto; padding: 8px 32px 24px; box-sizing: border-box;">
+  <div class="vm-reveal" style="text-align: center; margin-bottom: 32px;">
+    <div style="font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #2F5694; margin-bottom: 14px;">You’re in good company</div>
+    <h2 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: clamp(28px, 3vw, 40px); line-height: 1.1; color: #223E6B; margin: 0 auto 14px; max-width: 640px; text-wrap: balance;">Practices like yours made the same call</h2>
+    <div style="display: inline-flex; align-items: center; gap: 9px; background: #fff; border: 1px solid rgba(34,62,107,0.18); border-radius: 999px; padding: 9px 18px; white-space: nowrap;"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.4-11.3-8.1l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.7-.4-3.9z"></path></svg><span style="font-family: 'polymath-text', sans-serif; font-size: 14px; font-weight: 800; color: #223E6B;">5.0</span><span style="color: #F3B23E; font-size: 12px; letter-spacing: 2px;">★★★★★</span><span style="font-family: 'polymath-text', sans-serif; font-size: 13px; color: #333333;">on Google</span></div>
+  </div>
+  <div class="vm-reviews3 vm-reveal" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;">
+      <div style="background: #F4F7FC; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;"><div style="color: #F3B23E; font-size: 14px; letter-spacing: 3px;">★★★★★</div><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.4-11.3-8.1l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.7-.4-3.9z"></path></svg></div>
+        <p style="font-family: 'polymath-text', sans-serif; font-size: 16px; line-height: 1.6; color: #223E6B; margin: 0; flex: 1 1 auto;">“Veterinary Marketing has been amazing. They are so responsive and custom tailored.”</p>
+        <div style="display: flex; align-items: center; gap: 12px;"><div style="width: 40px; height: 40px; flex: 0 0 auto; border-radius: 50%; background: #2F5694; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 800;">AH</div><div style="font-size: 15px; font-weight: 700; color: #223E6B;">Adele Hilliard</div></div>
+      </div>
+      <div style="background: #F4F7FC; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;"><div style="color: #F3B23E; font-size: 14px; letter-spacing: 3px;">★★★★★</div><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.4-11.3-8.1l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.7-.4-3.9z"></path></svg></div>
+        <p style="font-family: 'polymath-text', sans-serif; font-size: 16px; line-height: 1.6; color: #223E6B; margin: 0; flex: 1 1 auto;">“The team has been great and very responsive. The website they created is beautiful!”</p>
+        <div style="display: flex; align-items: center; gap: 12px;"><div style="width: 40px; height: 40px; flex: 0 0 auto; border-radius: 50%; background: #749BEA; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 800;">AQ</div><div style="font-size: 15px; font-weight: 700; color: #223E6B;">Andrew Quesada</div></div>
+      </div>
+      <div style="background: #F4F7FC; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;"><div style="color: #F3B23E; font-size: 14px; letter-spacing: 3px;">★★★★★</div><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.9z"></path><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"></path><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.4-11.3-8.1l-6.5 5C9.5 39.6 16.2 44 24 44z"></path><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.7-.4-3.9z"></path></svg></div>
+        <p style="font-family: 'polymath-text', sans-serif; font-size: 16px; line-height: 1.6; color: #223E6B; margin: 0; flex: 1 1 auto;">“These guys are great. They are quick, responsive, and professional. They understand the metrics of business. I highly recommend using them.”</p>
+        <div style="display: flex; align-items: center; gap: 12px;"><div style="width: 40px; height: 40px; flex: 0 0 auto; border-radius: 50%; background: #223E6B; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 800;">CV</div><div style="font-size: 15px; font-weight: 700; color: #223E6B;">Concierge Vet Club</div></div>
+      </div>
+  </div>
+  <div class="vm-reveal" style="margin-top: 28px; text-align: center;">
+    <a href="reviews.html" style="font-family: 'polymath-text', sans-serif; font-size: 15px; font-weight: 800; color: #2F5694; display: inline-flex; align-items: center; gap: 8px; border-bottom: 2px solid rgba(47,86,148,0.3); padding-bottom: 3px;" style-hover="color: #223E6B; border-color: #223E6B;">Read all our Google reviews →</a>
+  </div>
+</section>
+
+<section id="next" data-screen-label="What happens next" style="max-width: 1140px; margin: 0 auto; padding: 48px 32px 120px; box-sizing: border-box;">
   <div class="vm-reveal" style="text-align: center; margin-bottom: 36px;">
     <div style="font-family: 'polymath-text', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #2F5694; margin-bottom: 16px;">What happens next</div>
     <h2 style="font-family: var(--vm-display); font-weight: var(--vm-display-weight, 800); font-size: clamp(28px, 3vw, 40px); line-height: 1.1; color: #223E6B; margin: 0 auto; max-width: 640px; text-wrap: balance;">Three steps, no pressure</h2>

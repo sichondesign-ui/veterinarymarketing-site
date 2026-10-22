@@ -189,3 +189,42 @@
 .vm-dev-imac::after { order: 3; }
 @media (max-width: 760px) { .vm-dev-imac::before { height: 34px; } .vm-dev-imac::after { height: 46px; } }
 .vm-sample { color: #B3541E; letter-spacing: 0; text-transform: none; font-weight: 700; }
+
+/* ---- r8 (10/22 client edits, build 12) ---- */
+/* Thank-you: no sideways scroll on phones; calendar card centered; reviews grid */
+.vm-thanks { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+.vm-thanks > * { min-width: 0; }
+.vm-cal-card { max-width: 100%; overflow: hidden; }
+.meetings-iframe-container, .meetings-iframe-container iframe { max-width: 100% !important; }
+@media (max-width: 900px) { .vm-thanks { grid-template-columns: minmax(0, 1fr) !important; } .vm-cal-card { margin: 0 auto; width: 100%; } .vm-reviews3 { grid-template-columns: 1fr !important; } }
+/* Paw-print cursor trail (desktop pointers only) */
+.vm-paw-trail { position: fixed; left: 0; top: 0; width: 22px; height: 20px; pointer-events: none; z-index: 9998; background: url("paw-fill-1e3d9826c2.svg") no-repeat center / contain; opacity: 0; filter: opacity(0.55); animation: vmPawFade 1.4s ease-out forwards; }
+@keyframes vmPawFade { 0% { opacity: 0; transform: translate(-50%, -50%) rotate(var(--r)) scale(0.6); } 12% { opacity: 1; transform: translate(-50%, -50%) rotate(var(--r)) scale(1); } 100% { opacity: 0; transform: translate(-50%, -50%) rotate(var(--r)) scale(1); } }
+@media (prefers-reduced-motion: reduce), (pointer: coarse) { .vm-paw-trail { display: none; } }
+@media (max-width: 760px) {
+  /* Footer: mascot centered above the copyright line */
+  .vm-foot-bottom { align-items: center !important; text-align: center; gap: 16px !important; padding-top: 24px !important; }
+  .vm-foot-bottom img { order: -1; height: 46px !important; }
+  footer .vm-footer-grid { padding-bottom: 28px !important; }
+  footer > div { padding-top: 52px !important; }
+  /* About: hero photo runs straight into Why Us */
+  #top .sp-hero:not(:has(.sp-hero-media)) { padding-bottom: 0 !important; }
+  #why.sp-section { padding-top: 8px !important; }
+  /* Focus + service pages: section run-ins */
+  .fp-section, .sp-section { padding-top: 48px !important; padding-bottom: 48px !important; }
+  #approach { padding-top: 48px !important; padding-bottom: 24px !important; }
+  #approach .fp-2col { margin-bottom: 56px !important; }
+  #dashboard { padding-top: 48px !important; padding-bottom: 48px !important; }
+  #story { padding-top: 48px !important; padding-bottom: 48px !important; }
+  #story > div[aria-hidden="true"]:first-child:not([style*="position: absolute"]) { display: none; }   /* 1px hairline rule on focus pages */
+  #story > div[aria-hidden="true"][style*="position: absolute"] { top: 24px !important; }               /* service pages: paw no longer clipped at the band edge */
+  #story.vm-after-same { padding-top: 8px !important; }
+  #reviews.fp-section { padding-bottom: 16px !important; }
+  #why.fp-section { padding-top: 24px !important; }
+  #book { padding-bottom: 40px !important; }
+  #book .sp-cta-card { padding-left: 24px !important; padding-right: 24px !important; }
+  /* zig-zag blocks on service pages */
+  section.sp-section[data-screen-label]:not(#why):not(#book) { padding-top: 44px !important; padding-bottom: 44px !important; }
+  /* thank-you */
+  #next { padding-top: 32px !important; padding-bottom: 72px !important; }
+}
