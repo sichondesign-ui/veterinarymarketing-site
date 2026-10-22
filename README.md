@@ -98,6 +98,14 @@ Still needed before launch, each requires something from John or the build platf
 - Rendering: pages are client-rendered by the Claude Design runtime; the raw HTML a crawler receives is a template. Fine for a preview; the production site should be the Webflow build (or a static render).
 
 ## Changelog
+### 2026-10-22 – build 12 (John's "Corporate Website Edit 10/22", final pass before dev handoff)
+Applied by `tools/r8_client_1022.py`.
+- Thank-you page: three Google reviews + "Read all our Google reviews" under the calendar ("Practices like yours made the same call"). Phone fix: the page could be dragged sideways because the calendar card was wider than the viewport; card now centered and edge-to-edge on phones so the HubSpot widget has room.
+- About (phones): hero photo runs straight into Why Us.
+- Footer (phones): mascot centered above the copyright line (John's preferred option); less space between the link columns and the bottom rule.
+- Phones, every focus + service page: section run-ins tightened (pain points, approach blocks, Dashboard, Testimonial band, zig-zag blocks, CTA card → footer). The "hard line" above the Testimonial band was the paw decoration clipped flat at the band's top edge; it now sits inside the band, and when the band follows a same-blue block the band's top padding collapses (`vm-r2.js`).
+- Paw-print cursor trail (desktop pointers only, off under reduced-motion): light-blue paws alternate left/right behind the pointer and fade. John remembers this from the live site; it was never in this build, so it is new code in `vm-r2.js`.
+- Cache-buster `?v=16`.
 ### 2026-10-21 – build 11 (client edit request 10/17, answers 10/21)
 Applied by `tools/r7_client_1017.py`; assets in `tools/r7_assets.json` (`assets/mailer-*`, `assets/badge-*`, `assets/logo-anim-w-*`).
 - Header (every page): **Client Results** → `reviews.html` between Areas of Focus and Contact, desktop and mobile menu. The About pill no longer lights up on the Reviews page.
@@ -108,7 +116,7 @@ Applied by `tools/r7_client_1017.py`; assets in `tools/r7_assets.json` (`assets/
 - Direct mail: Bill's 10/19 "vet mailer" replaces the old postcard on the homepage card, the 8 focus-page service grids and the Direct Mail page (hero + sample).
 - Phones, service + focus heroes: breadcrumb shows the page tag only (desktop keeps "Services /"), one short line (service pages: first intro sentence; focus pages: Bill's 10/21 one-liners), then CTA, call, logos on one row, image. Desktop copy untouched.
 - Phones, John's list: homepage credibility logos on one line; focus pages' gap between "Read all our Google reviews" and Why Us cut ~70%; Why Us headline breaks after "Veterinary" instead of mid-word (soft hyphen); service pages' run-in to the Testimonial band tightened; mobile menu no longer reserves the sub-panel's height under the Call row; Request Info sheet keeps Next / Submit above Safari and in-app browser toolbars (safe-area padding).
-- Cache-buster `?v=12`.
+- Cache-buster `?v=12` (later `?v=15` after the badge and iMac-frame follow-ups).
 ### 2026-10-16 – build 10 (client edit request 10/15)
 Applied by `tools/r6_client_1015.py`; logos and dog in `assets/logo-*.webp`, `assets/req-dog-*.webp`.
 - Footer (every page): new tagline copy from John's doc; Meta / Google Ads / ChatGPT Ads / Bing Ads logos in white under it.
